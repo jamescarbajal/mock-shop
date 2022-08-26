@@ -1,7 +1,8 @@
 import { useContext, useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { Outlet } from 'react-router-dom';
-import { AppHeader } from '/AppHeader';
+import AppHeader from './AppHeader';
+import { MainContainer } from './StyledComponents';
 
 export default function HeaderFooter() {
 
@@ -9,11 +10,11 @@ export default function HeaderFooter() {
 
 return (
 
-    <HeaderFooter>
+    <MainContainer>
         <AppHeader />
-        <Outlet />
-        <MainFooter />
-    </HeaderFooter>
+        {/* <Outlet />
+        <MainFooter /> */}
+    </MainContainer>
 
 );
 
