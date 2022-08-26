@@ -8,7 +8,7 @@ export default function AppHeader() {
     return (
         <>
             <NavBarContainer>
-                <div>Nav Bar!!</div>
+                    <div>Nav Bar!!</div>
             </NavBarContainer>
         </>
     );
