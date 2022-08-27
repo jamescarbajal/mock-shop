@@ -18,7 +18,7 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    background-color: ;
 `;
 
 export const MainContainer = styled.div`

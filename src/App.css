@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;;
-  background-size: ;
+  background-color: #61dafb;
 }
 
 .App-link {
@@ -36,6 +36,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.boldfont-500 {
+  font-weight: 500;
 }
 
 .Navbar-background {
@@ -56,8 +60,8 @@
   right: 0;
   bottom: 0;
   background: url('./bluegreen-texture-bg.jpg') center;
-  opacity: 0.7;
-  background-size: cover;
+  opacity: 0.6;
+  background-size: inherit;
 }
 
 .Navbar-content {
