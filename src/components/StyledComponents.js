@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { navbarBackground } from '.../public/navbar-background.jpg';
 
 export const MainContainer = styled.div`
     height: 100vh;
@@ -28,7 +27,7 @@ export const NavBarContainer = styled.div`
     flex-direction: row;
     align-items: center;
     padding: 5px;
-    background: rgb(0, 0, 0, 0.4) url(${navbarBackground}) no-repeat center cover;
+    background: rgb(0, 0, 0, 0.4) url('/navbar-background.jpg') no-repeat center cover;
     overflow: hidden;
     z-index: 100;
 `;
