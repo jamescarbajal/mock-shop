@@ -16,9 +16,8 @@ export const HomeContainer = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: ;
+    flex-flow: column;
+    align-items: center;
 `;
 
 export const MainContainer = styled.div`
