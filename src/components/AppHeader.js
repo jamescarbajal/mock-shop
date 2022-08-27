@@ -1,7 +1,6 @@
 // import { ThemeToggle } from './ThemeToggle';
-import { NavBarContainer } from './StyledComponents';
 // import { NavBarLinks } from './NavBarLinks';
-import navbarBackgroundImage from '../navbar-background.jpg';
+import { NavBarContainer } from './StyledComponents';
 
 export default function AppHeader() {
 

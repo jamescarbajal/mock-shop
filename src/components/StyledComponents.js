@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
-export const MainContainer = styled.div`
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-flow: row column;
-    justify-content: center;
-    align-items: center;
+
+export const FooterContainer = styled.div`
+    
 `;
 
 export const HomeContainer = styled.div`
@@ -14,6 +10,15 @@ export const HomeContainer = styled.div`
     width: 100vw;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const MainContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-flow: row column;
     justify-content: center;
     align-items: center;
 `;

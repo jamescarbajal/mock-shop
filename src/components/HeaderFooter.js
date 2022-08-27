@@ -2,6 +2,7 @@ import { useContext, useState } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { Outlet } from 'react-router-dom';
 import AppHeader from './AppHeader';
+import AppFooter from './AppFooter';
 import { MainContainer } from './StyledComponents';
 
 export default function HeaderFooter() {
@@ -12,8 +13,8 @@ return (
 
     <MainContainer>
         <AppHeader />
-        {/* <Outlet />
-        <MainFooter /> */}
+        <Outlet />
+        <AppFooter />
     </MainContainer>
 
 );
