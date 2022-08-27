@@ -10,10 +10,11 @@ export const FooterContainer = styled.div`
     height: fit-content;
     width: 100%;
     border-top: 1px solid black;
+    background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
 
 export const HomeContainer = styled.div`
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     display: flex;
     flex-flow: column;

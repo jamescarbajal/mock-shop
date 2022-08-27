@@ -4,7 +4,7 @@ export default function AppFooter() {
 
     return (
         <FooterContainer>
-            <div style={{ fontSize: 30 }}>
+            <div class="site-footer">
                 This is the footer!
             </div>
         </FooterContainer>
