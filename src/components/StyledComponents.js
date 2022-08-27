@@ -21,13 +21,8 @@ export const HomeContainer = styled.div`
 export const NavBarContainer = styled.div`
     align-self: flex-start;
     width: 100vw;
-    min-height: 50px;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5px;
-    background: rgb(0, 0, 0, 0.4) url('/navbar-background.jpg') no-repeat center cover;
+    height: 50px;
+    border: 1px solid black;
     overflow: hidden;
     z-index: 100;
 `;
