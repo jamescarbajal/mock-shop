@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { CompanyLogo } from './StyledComponents';
+import { StyledLink } from './StyledComponents';
 
 
 export default function NavBarLinks() {
@@ -32,16 +33,16 @@ export default function NavBarLinks() {
             <div class="d-flex">
                 {!loggedInUser ? (
                     <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <div path="/Login" class="mx-2">Login</div>
+                        <StyledLink path="/Login" class="mx-2">Login</StyledLink>
                     </NavLink>
                 ) : (
                     <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <div path="/Account" class="mx-2">"Username"</div>
+                        <StyledLink path="/Account" class="mx-2">"Username"</StyledLink>
                     </NavLink>
                 )}
 
                 <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}>
-                    <div path="/Cart" class="mx-2">Cart</div>
+                    <StyledLink path="/Cart" class="mx-2">Cart</StyledLink>
                 </NavLink>
             </div>
         </div>

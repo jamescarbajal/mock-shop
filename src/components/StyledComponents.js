@@ -11,9 +11,9 @@ export const AnnouncementsContainer = styled.div`
 
 export const CompanyLogo = styled.h1`
     position: absolute;
-    top: 50;
-    left: 50;
-    transform: translate(  );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: inherit;
     font-weight: inherit;
 `;
@@ -55,6 +55,13 @@ export const NavBarContainer = styled.div`
     height: fit-content;
     box-shadow: 3px 3px 3px gray;
     padding: 5px;
+`;
+
+export const StyledLink = styled.h3`
+    font-style: inherit;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 20px;
 `;
 
 export const WelcomeBanner = styled.div`
