@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { NavBarStyle } from '../components/StyledComponents';
+import { CompanyLogo } from './StyledComponents';
 
 
 export default function NavBarLinks() {
@@ -24,17 +24,25 @@ export default function NavBarLinks() {
         <>
         <div class="Navbar-content">
             <div>
-                HAMBURGER
+                #
             </div>
-            <NavLink to="/" style={{ textDecoration: "none", color: "black" }}><div path="/">Logo/Company Name</div></NavLink>
+            <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+                <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
+            </NavLink>
             <div class="d-flex">
                 {!loggedInUser ? (
-                    <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}><div path="/Login" class="mx-2">Login</div></NavLink>
+                    <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
+                        <div path="/Login" class="mx-2">Login</div>
+                    </NavLink>
                 ) : (
-                    <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}><div path="/Account" class="mx-2">"Username"</div></NavLink>
+                    <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
+                        <div path="/Account" class="mx-2">"Username"</div>
+                    </NavLink>
                 )}
 
-                <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}><div path="/Cart" class="mx-2">Cart</div></NavLink>
+                <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}>
+                    <div path="/Cart" class="mx-2">Cart</div>
+                </NavLink>
             </div>
         </div>
         </>

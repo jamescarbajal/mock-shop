@@ -9,6 +9,15 @@ export const AnnouncementsContainer = styled.div`
     border-radius: 3px;
 `;
 
+export const CompanyLogo = styled.h1`
+    position: absolute;
+    top: 50;
+    left: 50;
+    transform: translate(  );
+    font-size: inherit;
+    font-weight: inherit;
+`;
+
 export const FooterContainer = styled.div`
     position: relative;
     display: flex;
@@ -22,6 +31,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const HomeContainer = styled.div`
+    position: relative;
     height: 100%;
     width: 100vw;
     display: flex;
@@ -47,13 +57,8 @@ export const NavBarContainer = styled.div`
     padding: 5px;
 `;
 
-export const NavBarStyle = styled.p`
-    font-weight: bold;
-    color: red;
-    text-decoration: none;
-`;
-
-export const WelcomeBanner = styled.h1`
+export const WelcomeBanner = styled.div`
+    margin: 20px;
     font-size: 5vmin;
     color: blue;
 `;
