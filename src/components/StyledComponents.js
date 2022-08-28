@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 
+export const AnnouncementsBar = styled.div`
+    
+`;
+
 export const FooterContainer = styled.div`
     position: relative;
     display: flex;
@@ -30,13 +34,13 @@ export const MainContainer = styled.div`
 `;
 
 export const NavBarContainer = styled.div`
-    align-self: flex-start;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 50px;
-    border-bottom: 1px solid black;
-    overflow: hidden;
-    z-index: 100;
-
+    height: fit-content;
+    box-shadow: 3px 3px 3px gray;
+    padding: 5px;
 `;
 
 export const WelcomeBanner = styled.h1`

@@ -42,28 +42,6 @@
   font-weight: 500;
 }
 
-.Navbar-background {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-  width: 100;
-  background-color: rgba(0, 0, 100, 0.4);
-}
-
-.Navbar-background::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('./bluegreen-texture-bg.jpg') center;
-  opacity: 0.6;
-  background-size: inherit;
-}
-
 .Navbar-content {
   position: relative;
   padding: 10px;
@@ -75,6 +53,7 @@
   justify-content: space-between;
   font-size: 20px;
   font-weight: 700;
+  position: ;
 }
 
 .site-footer
@@ -106,8 +85,8 @@
 
 .footer-links
 {
-  padding-left:0;
-  list-style:none
+  padding:0;
+  list-style:none;
 }
 
 .footer-links li
@@ -117,8 +96,8 @@
 
 .footer-links a
 {
-  color: rgb(79, 79, 79);
-  text-shadow: 1px 1px black;
+  color: #000;
+  font-size: 13px;
 }
 
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
