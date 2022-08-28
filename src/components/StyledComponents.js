@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 
-export const AnnouncementsBar = styled.div`
-    
+export const AnnouncementsContainer = styled.div`
+    width: 100%;
+    height: fit-content;
+    background-color: lightsteelblue;
+    text-align: center;
+    border-radius: 3px;
 `;
 
 export const FooterContainer = styled.div`
@@ -41,6 +45,12 @@ export const NavBarContainer = styled.div`
     height: fit-content;
     box-shadow: 3px 3px 3px gray;
     padding: 5px;
+`;
+
+export const NavBarStyle = styled.p`
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
 `;
 
 export const WelcomeBanner = styled.h1`

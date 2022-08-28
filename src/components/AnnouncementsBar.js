@@ -1,13 +1,11 @@
-
+import { AnnouncementsContainer } from './StyledComponents';
 
 export default function AnnouncementsBar() {
 
     return (
-        <>
-            <div class="container-fluid border border-solid border-dark border-1">
+            <AnnouncementsContainer>
                 Current specials and/or facebook live timer countdown
-            </div>
-        </>
+            </AnnouncementsContainer>
     );
 
 };
