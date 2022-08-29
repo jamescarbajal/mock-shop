@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { CompanyLogo } from './StyledComponents';
+import { CompanyLogo, NavBarContainer } from './StyledComponents';
 import { StyledLink } from './StyledComponents';
+import { NavBarContents } from './StyledComponents';
 
 
 export default function NavBarLinks() {
@@ -12,30 +13,35 @@ export default function NavBarLinks() {
     function styleByActiveStatus(isActive) {
         return isActive ? { 
             fontWeight: "bold",
-            color: "black",
+            color: "blue",
             textDecoration: "none"
             } : {
-                fontWeight: "bold",
-                color: "darkblue",
+                fontWeight: "regular",
+                color: "black",
                 textDecoration: "none"
             };
     };
 
     return (
-        <>
-        <div class="Navbar-content">
-            <div>
+        <NavBarContents>
+            <div class="d-flex">
                 #
             </div>
+
             <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
                 <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
             </NavLink>
+
             <div class="d-flex">
                 {!loggedInUser ? (
                     <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <StyledLink path="/Login" class="mx-2">Login</StyledLink>
+                        <StyledLink path="/Login" class="mx-2">
+                            <div>Login</div>
+                        </StyledLink>
                     </NavLink>
-                ) : (
+                ) 
+                : 
+                (
                     <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
                         <StyledLink path="/Account" class="mx-2">"Username"</StyledLink>
                     </NavLink>
@@ -45,9 +51,7 @@ export default function NavBarLinks() {
                     <StyledLink path="/Cart" class="mx-2">Cart</StyledLink>
                 </NavLink>
             </div>
-        </div>
-        </>
-
+        </NavBarContents>
     );
 
 };

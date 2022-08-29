@@ -1,16 +1,17 @@
-import { HomeContainer, WelcomeBanner } from "./StyledComponents";
+import HomeHeroSection from "./HomeHeroSection";
+import { HomeContainer } from "./StyledComponents";
+import { useContext } from 'react';
+import { ThemeContext } from "styled-components";
 
 export default function Home() {
 
+    const { theme } =useContext(ThemeContext);
+
     return (
-            <HomeContainer>
-                <WelcomeBanner>
-                    <div class="display-3">
-                        Welcome!!
-                    </div>
-                </WelcomeBanner>
+            <HomeContainer className={`App-${theme}`}>
+                <HomeHeroSection />
             </HomeContainer>
 
     );
 
-}
+};

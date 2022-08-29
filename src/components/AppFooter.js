@@ -28,7 +28,7 @@ export default function AppFooter() {
                         <div class="row">
                             <div class="d-flex flex-row justify-content-center align-items-center">
                             <p class="copyright-text text-center">
-                                Copyright &copy; 2022 All Rights Reserved by <i>All Things Sweet</i>
+                                Copyright &copy; 2022 All Rights Reserved by <i>Brother Ryan Shop, LLC</i>
                             </p>
                             </div>
 

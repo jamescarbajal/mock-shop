@@ -9,6 +9,12 @@ export const AnnouncementsContainer = styled.div`
     border-radius: 3px;
 `;
 
+export const Banner = styled.div`
+    margin: 20px;
+    font-size: 5vmin;
+    color: blue;
+`;
+
 export const CompanyLogo = styled.h1`
     position: absolute;
     top: 50%;
@@ -16,6 +22,7 @@ export const CompanyLogo = styled.h1`
     transform: translate(-50%, -50%);
     font-size: inherit;
     font-weight: inherit;
+    color: inherit;
 `;
 
 export const FooterContainer = styled.div`
@@ -30,9 +37,15 @@ export const FooterContainer = styled.div`
     background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
 
+export const HeroSection = styled.div`
+    width: 100%;
+    height: 90vh;
+    background-color: gray;
+`;
+
 export const HomeContainer = styled.div`
     position: relative;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-flow: column;
@@ -57,15 +70,28 @@ export const NavBarContainer = styled.div`
     padding: 5px;
 `;
 
-export const StyledLink = styled.h3`
-    font-style: inherit;
-    margin-left: 10px;
-    margin-right: 5px;
+export const NavBarContents = styled.div`
+    position: relative;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     font-size: 20px;
+    font-weight: 700;
 `;
 
-export const WelcomeBanner = styled.div`
-    margin: 20px;
-    font-size: 5vmin;
-    color: blue;
+export const StyledLink = styled.h3`
+    position: inherit;
+    display: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    color: inherit;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: inherit;
+    color: inherit;
 `;
+
