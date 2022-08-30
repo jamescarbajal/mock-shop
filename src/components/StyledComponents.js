@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import HomeHeroImage from '../home-hero-image.jpg';
 
 
 export const AnnouncementsContainer = styled.div`
@@ -37,16 +38,35 @@ export const FooterContainer = styled.div`
     background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
 
+export const HeroImage = styled.div`
+    width: auto;
+    height: 120%;
+    background-image: url(${HomeHeroImage});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    z-index: 1;
+`;
+
 export const HeroSection = styled.div`
-    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
     height: 90vh;
     background-color: gray;
+    overflow: hidden;
+    z-index: 1;
 `;
 
 export const HomeContainer = styled.div`
     position: relative;
     height: 100vh;
     width: 100vw;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -55,6 +75,8 @@ export const HomeContainer = styled.div`
 export const MainContainer = styled.div`
     height: 100vh;
     width: 100%;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,11 +103,13 @@ export const NavBarContents = styled.div`
     justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
+    z-index: 1;
 `;
 
 export const StyledLink = styled.h3`
     position: inherit;
-    display: inherit;
+    align-self: center;
+    display: flex;
     font-style: inherit;
     font-weight: inherit;
     color: inherit;
