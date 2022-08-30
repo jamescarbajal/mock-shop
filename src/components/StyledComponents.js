@@ -5,8 +5,6 @@ import HomeHeroImage from '../hero-facebook.jpg';
 export const AnnouncementsContainer = styled.div`
     position: absolute;
     width: 100%;
-    display: flex;
-    
     height: fit-content;
     background-color: lightsteelblue;
     text-align: center;
@@ -43,6 +41,17 @@ export const FooterContainer = styled.div`
     background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
 
+export const HamburgerContainer = styled.div`
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px;
+    height: 100%;
+    width: fit-content;
+    z-index: 10;
+    overflow: show;
+`;
+
 export const HeroImage = styled.div`
     position: relative;
     margin: 0;
@@ -53,7 +62,8 @@ export const HeroImage = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: -10;
+    opacity: 70%;
+    z-index: -100;
 `;
 
 export const HeroSection = styled.div`
@@ -62,23 +72,31 @@ export const HeroSection = styled.div`
     width: 100vw;
     height: 100vh;
     background-color: gray;
-    overflow: hidden;
-    z-index: 1;
+    z-index: -10;
 `;
 
 export const HeroText = styled.button`
     position: absolute;
-    top: 60%;
-    left: 25%;
-    width: fit-content;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    text-align: left;
+    transform: translate(-50%, -50%);
+    min-width: fit-content;
+    max-width: 100vw;
+    min-height: fit-content;
+    max-height: 100vh;
+    font-weight: 600;
+    font-size: 16vw;
+    line-height: 28vh;
+    border: none;
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 10;
-    font-size: 40px;
-    border: 1px solid navy;
-    border-radius: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgba(200, 200, 200, 0.5);
 `;
 
 export const HomeContainer = styled.div`
@@ -89,6 +107,7 @@ export const HomeContainer = styled.div`
     margin: 0;
     display: flex;
     flex-flow: column;
+    z-index: 1;
 `;
 
 export const MainContainer = styled.div`
@@ -100,6 +119,7 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 `;
 
 export const NavBarContainer = styled.div`
@@ -111,12 +131,13 @@ export const NavBarContainer = styled.div`
     flex-direction: column;
     align-items: center;
     height: 0;
-    z-index: 10;
+    z-index: 2;
 `;
 
 export const NavBarContents = styled.div`
     position: relative;
-    padding: 25px;
+    padding: 22px;
+    padding-top: 30px;
     height: 100%;
     max-height: 50px;
     width: 100%;
@@ -126,9 +147,8 @@ export const NavBarContents = styled.div`
     justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
-    z-index: 10;
     box-shadow: 5px 1px 8px gray;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.12);
 `;
 
 export const StyledLink = styled.h3`
@@ -136,6 +156,7 @@ export const StyledLink = styled.h3`
     font-style: inherit;
     font-weight: inherit;
     color: inherit;
+    margin-bottom: 13px;
     margin-left: 5px;
     margin-right: 5px;
     font-size: 16px;

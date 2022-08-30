@@ -93,3 +93,74 @@
 {
   display:inline-block;
 }
+
+
+/* Hamburger Menu CSS */
+
+#page-wrap {
+  text-align: center;
+  overflow: auto;
+}
+
+.bm-item {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  line-height: 50px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+  font-family: sans-serif ;
+}
+
+.bm-item:hover {
+  color: white;
+}
+
+.bm-burger-button {
+  position: sticky;
+  top: 0;
+  width: 34px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+.bm-burger-bars {
+  background: #373a47;
+}
+
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-menu {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  margin-top: 12px;
+  margin-left: -10px;
+}
+
+.bm-morph-shape {
+  fill: #777c90;
+}
+
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+.bm-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100vh;
+  width: 100vw;
+  box-sizing: content-box;
+}

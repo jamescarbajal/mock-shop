@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
 import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
+import HamburgerMenu from './HamburgerMenu';
+import { HamburgerContainer } from './components/StyledComponents'
 
 
 function App() {

@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext';
 import { CompanyLogo, NavBarContainer } from './StyledComponents';
 import { StyledLink } from './StyledComponents';
 import { NavBarContents } from './StyledComponents';
-
+import {slide as HamburgerMenu} from 'react-burger-menu';
 
 export default function NavBarLinks() {
 
@@ -23,35 +23,33 @@ export default function NavBarLinks() {
     };
 
     return (
-        <NavBarContents>
-            <div>
-                #
-            </div>
-
-            <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
-                <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
-            </NavLink>
-
-            <div class="d-flex">
-                {!loggedInUser ? (
-                    <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <StyledLink path="/Login" class="mx-2">
-                            <div>Login</div>
-                        </StyledLink>
-                    </NavLink>
-                ) 
-                : 
-                (
-                    <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <StyledLink path="/Account" class="mx-2">"Username"</StyledLink>
-                    </NavLink>
-                )}
-
-                <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}>
-                    <StyledLink path="/Cart" class="mx-2">Cart</StyledLink>
+        <>
+            <NavBarContents>
+                <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
+                    <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
                 </NavLink>
-            </div>
+
+                <div class="d-flex">
+                    {!loggedInUser ? (
+                        <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
+                            <StyledLink path="/Login" class="mx-2">
+                                <div>Login</div>
+                            </StyledLink>
+                        </NavLink>
+                    ) 
+                    : 
+                    (
+                        <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
+                            <StyledLink path="/Account" class="mx-2">"Username"</StyledLink>
+                        </NavLink>
+                    )}
+
+                    <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}>
+                        <StyledLink path="/Cart" class="mx-2">Cart</StyledLink>
+                    </NavLink>
+                </div>
         </NavBarContents>
+    </>
     );
 
 };

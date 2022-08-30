@@ -10,20 +10,18 @@ export default function HomeHeroSection() {
 
 
     function noHoverStyling(e) {
-        e.target.style.backgroundColor = "rgba(200, 200, 200, 0.5)";
-        e.target.style.color = "black";
+        e.target.style.color = "rgba(0, 0, 0, 0.6)";
     };
 
     function hoverStyling(e) {
-        e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
-        e.target.style.color = "white";
+        e.target.style.color = "rgba(255, 255, 255, 0.6";
     };
 
 
     return (
     <>
         <HeroSection>
-            <HeroText onMouseOver={hoverStyling} onMouseLeave={noHoverStyling}>SHOP</HeroText>
+            <HeroText onMouseOver={hoverStyling} onMouseLeave={noHoverStyling}>BROTHER RYAN SHOP</HeroText>
             <HeroImage/>
         </HeroSection>
     </>

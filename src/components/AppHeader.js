@@ -1,15 +1,19 @@
 // import { ThemeToggle } from './ThemeToggle';
 import NavBarLinks from './NavBarLinks';
 import AnnouncementsBar from './AnnouncementsBar'
-import { NavBarContainer } from './StyledComponents';
+import { HamburgerContainer, NavBarContainer } from './StyledComponents';
+import HamburgerMenu from '../HamburgerMenu';
 
 export default function AppHeader() {
 
 
     return (
-        <>
+        <>  
             <AnnouncementsBar />
             <NavBarContainer>
+                <HamburgerContainer>
+                    <HamburgerMenu />
+                </HamburgerContainer>
                 <NavBarLinks />
             </NavBarContainer>
         </>
