@@ -24,7 +24,7 @@ export default function NavBarLinks() {
 
     return (
         <NavBarContents>
-            <div class="d-flex">
+            <div>
                 #
             </div>
 

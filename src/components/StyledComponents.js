@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import HomeHeroImage from '../home-hero-image.jpg';
+import HomeHeroImage from '../hero-facebook.jpg';
 
 
 export const AnnouncementsContainer = styled.div`
@@ -20,7 +20,7 @@ export const CompanyLogo = styled.h1`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -65%);
     font-size: inherit;
     font-weight: inherit;
     color: inherit;
@@ -39,12 +39,12 @@ export const FooterContainer = styled.div`
 `;
 
 export const HeroImage = styled.div`
-    width: auto;
-    height: 120%;
+    width: 100%;
+    height: 100%;
     background-image: url(${HomeHeroImage});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
     z-index: 1;
 `;
 
@@ -55,7 +55,7 @@ export const HeroSection = styled.div`
     padding: 0;
     margin: 0;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     background-color: gray;
     overflow: hidden;
     z-index: 1;
@@ -83,19 +83,20 @@ export const MainContainer = styled.div`
 `;
 
 export const NavBarContainer = styled.div`
-    position: sticky;
     display: flex;
-    flex-direction: column;
     width: 100%;
-    height: fit-content;
-    box-shadow: 3px 3px 3px gray;
-    padding: 5px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 25px;
+    z-index: 10;
 `;
 
 export const NavBarContents = styled.div`
-    position: relative;
-    padding: 10px;
+    position: sticky;
+    padding: 25px;
     height: 100%;
+    max-height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -103,19 +104,17 @@ export const NavBarContents = styled.div`
     justify-content: space-between;
     font-size: 20px;
     font-weight: 700;
-    z-index: 1;
+    z-index: 10;
+    box-shadow: 5px 1px 15px gray;
 `;
 
 export const StyledLink = styled.h3`
-    position: inherit;
-    align-self: center;
     display: flex;
     font-style: inherit;
     font-weight: inherit;
     color: inherit;
-    margin-left: 10px;
+    margin-left: 5px;
     margin-right: 5px;
-    font-size: inherit;
-    color: inherit;
+    font-size: 16px;
 `;
 

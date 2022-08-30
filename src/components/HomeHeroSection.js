@@ -11,9 +11,7 @@ export default function HomeHeroSection() {
     return (
     <>
         <HeroSection>
-            <div class="h-100 w-100">
                 <HeroImage/>
-            </div>
         </HeroSection>
     </>
     );
