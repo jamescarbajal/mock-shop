@@ -9,7 +9,6 @@ export default function AppHeader() {
     return (
         <>
             <AnnouncementsBar />
-            
             <NavBarContainer>
                 <NavBarLinks />
             </NavBarContainer>

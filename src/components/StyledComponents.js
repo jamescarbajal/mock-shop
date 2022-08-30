@@ -5,6 +5,8 @@ import HomeHeroImage from '../hero-facebook.jpg';
 export const AnnouncementsContainer = styled.div`
     position: absolute;
     width: 100%;
+    display: flex;
+    
     height: fit-content;
     background-color: lightsteelblue;
     text-align: center;
@@ -51,7 +53,7 @@ export const HeroImage = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    z-index: 1;
+    z-index: -10;
 `;
 
 export const HeroSection = styled.div`
@@ -64,12 +66,19 @@ export const HeroSection = styled.div`
     z-index: 1;
 `;
 
-export const HeroText = styled.div`
-    height: fit-content;
-    width: fit-content;
+export const HeroText = styled.button`
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 60%;
+    left: 25%;
+    width: fit-content;
+    height: fit-content;
+    z-index: 10;
+    font-size: 40px;
+    border: 1px solid navy;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgba(200, 200, 200, 0.5);
 `;
 
 export const HomeContainer = styled.div`
@@ -91,7 +100,6 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(90deg, rgba(240, 240, 240, 0.1), rgba(200, 200, 200, 0.3));
 `;
 
 export const NavBarContainer = styled.div`
@@ -102,7 +110,7 @@ export const NavBarContainer = styled.div`
     width: 100%;
     flex-direction: column;
     align-items: center;
-    max-height: 25px;
+    height: 0;
     z-index: 10;
 `;
 
