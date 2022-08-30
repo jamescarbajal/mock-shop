@@ -23,12 +23,12 @@
   font-size: calc(10px + 2vmin);
   color: white;;
   background-color: #61dafb;
-  position: ;
 }
 
 .App-link {
   color: #61dafb;
 }
+
 
 @keyframes App-logo-spin {
   from {

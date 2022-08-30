@@ -3,6 +3,7 @@ import heroImageRings from '../home-image-one.png';
 import heroImageBracelet from '../home-image-two.jpg';
 import HomeHeroImage from '../home-hero-image.jpg';
 import { HeroImage } from './StyledComponents';
+import { HeroText } from './StyledComponents';
 
 
 export default function HomeHeroSection() {
@@ -12,6 +13,9 @@ export default function HomeHeroSection() {
     <>
         <HeroSection>
                 <HeroImage/>
+                <HeroText>
+                    SHOP
+                </HeroText>
         </HeroSection>
     </>
     );

@@ -7,9 +7,12 @@ export default function AppHeader() {
 
 
     return (
+        <>
+            <AnnouncementsBar />
+            
             <NavBarContainer>
-                <AnnouncementsBar />
                 <NavBarLinks />
             </NavBarContainer>
+        </>
     );
 };
