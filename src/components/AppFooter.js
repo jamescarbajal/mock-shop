@@ -26,9 +26,12 @@ export default function AppFooter() {
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="d-flex flex-row justify-content-center align-items-center">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
                             <p class="copyright-text text-center">
                                 Copyright &copy; 2022 All Rights Reserved by <i>Brother Ryan Shop, LLC</i>
+                            </p>
+                            <p class="copyright-text text-center">
+                                Website designed by <a className="gitLink" href="https://github.com/jamescarbajal" target="blank_">James Carbajal</a>
                             </p>
                             </div>
 

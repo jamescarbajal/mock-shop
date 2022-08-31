@@ -94,6 +94,11 @@
   display:inline-block;
 }
 
+.gitLink {
+  color: rgb(109, 80, 80);
+  text-decoration: none;
+}
+
 
 /* Hamburger Menu CSS */
 
