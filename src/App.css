@@ -134,13 +134,16 @@
 }
 
 .bm-cross-button {
-  height: 24px;
-  width: 24px;
+  height: 30px;
+  width: 30px;
+  margin-top: 15px;
+  margin-right: 5px;
 }
 
 .bm-cross {
   background: #bdc3c7;
-  margin-top: 10px;;
+  height: 30px;
+  width: 30px;
 }
 
 .bm-menu {
