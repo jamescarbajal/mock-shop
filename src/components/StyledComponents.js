@@ -152,6 +152,15 @@ export const NavBarContents = styled.div`
     background-color: rgba(0, 0, 0, 0.12);
 `;
 
+export const ShopContainer = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+`;
+
 export const StyledLink = styled.h3`
     display: flex;
     font-style: inherit;

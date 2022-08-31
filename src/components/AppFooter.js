@@ -17,7 +17,6 @@ export default function AppFooter() {
                             <ul class="footer-links">
                                 <li><a href="./Order.html" target="_blank">ORDER</a></li>
                                 <li><a href="./FAQ.html" target="_blank">FAQ</a></li>
-                                <li><a href="./Menu.html" target="_blank">MENU</a></li>
                                 <li><a href="./Contact.html" target="_blank">CONTACT</a></li>
                             </ul>
                         </div>
