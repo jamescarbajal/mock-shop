@@ -12,12 +12,8 @@ export default props => {
         Shop
       </a>
 
-      <a className="menu-item" href="/Gallery">
-        Gallery
-      </a>
-
-      <a className="menu-item" href="/Upcoming">
-        Upcoming
+      <a className="menu-item" href="/Specials">
+        Specials
       </a>
 
       <a className="menu-item" href="/About">

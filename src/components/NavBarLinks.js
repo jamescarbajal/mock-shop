@@ -4,7 +4,8 @@ import { UserContext } from '../contexts/UserContext';
 import { CompanyLogo, NavBarContainer } from './StyledComponents';
 import { StyledLink } from './StyledComponents';
 import { NavBarContents } from './StyledComponents';
-import {slide as HamburgerMenu} from 'react-burger-menu';
+import { HamburgerContainer} from './StyledComponents';
+import HamburgerMenu from '../HamburgerMenu';
 
 export default function NavBarLinks() {
 
@@ -25,6 +26,10 @@ export default function NavBarLinks() {
     return (
         <>
             <NavBarContents>
+                <HamburgerContainer>
+                    <HamburgerMenu />
+                </HamburgerContainer>
+
                 <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
                     <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
                 </NavLink>

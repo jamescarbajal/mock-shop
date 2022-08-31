@@ -10,6 +10,10 @@ export default function Home() {
     return (
             <HomeContainer className={`App-${theme}`}>
                 <HomeHeroSection />
+                {/* CatalogCard */}
+                {/* <SpecialsCard */}
+                {/* CategoriesCard */}
+                {/* FAQ */}
             </HomeContainer>
 
     );

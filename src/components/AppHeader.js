@@ -11,9 +11,6 @@ export default function AppHeader() {
         <>  
             <AnnouncementsBar />
             <NavBarContainer>
-                <HamburgerContainer>
-                    <HamburgerMenu />
-                </HamburgerContainer>
                 <NavBarLinks />
             </NavBarContainer>
         </>
