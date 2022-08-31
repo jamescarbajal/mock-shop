@@ -42,11 +42,13 @@ export const FooterContainer = styled.div`
 `;
 
 export const HamburgerContainer = styled.div`
-    position: relative;
-    height: fit-content;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px;
+    padding-left: 15px;
+    height: 100%;
     width: fit-content;
-    padding: 0;
-    margin: 0;
     z-index: 10;
     overflow: show;
 `;
