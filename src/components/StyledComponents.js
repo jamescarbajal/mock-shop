@@ -32,17 +32,28 @@ export const CardContainer = styled.div`
     z-index: -1;
 `;
 
+export const CardHeader = styled.div`
+    display: flex;
+    justify-self: flex-end;
+    font-weight: 600;
+    margin-top: 10px;
+    text-align: center;
+`;
+
 export const CardWrapper = styled.div`
     position: relative;
     display: flex;
     flex-flow: column;
     justify-content: space-evenly;
+    align-items: center;
     border: 1px solid gray;
     box-shadow: 0px 4px 8px gray;
     border-radius: 10px;
     padding: 10px;
     min-width: 300px;
+    max-width: 300px;
     height: auto;
+    max-height: 300px;
     min-height: 300px;
     margin: 10px;
 `;
@@ -187,6 +198,12 @@ export const NavBarContents = styled.div`
     font-weight: 700;
     box-shadow: 5px 1px 8px gray;
     background-color: rgba(255, 255, 255, 0.8);
+`;
+
+export const ProductImage = styled.img`
+height: auto;
+width: auto;
+max-width: 150px;
 `;
 
 export const ShopContainer = styled.div`
