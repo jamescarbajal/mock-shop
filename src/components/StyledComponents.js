@@ -169,7 +169,7 @@ export const NavBarContainer = styled.div`
     flex-direction: column;
     align-items: center;
     height: 0;
-    z-index: 2;
+    z-index: 1001;
 `;
 
 export const NavBarContents = styled.div`
@@ -186,7 +186,7 @@ export const NavBarContents = styled.div`
     font-size: 20px;
     font-weight: 700;
     box-shadow: 5px 1px 8px gray;
-    background-color: rgba(0, 0, 0, 0.12);
+    background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const ShopContainer = styled.div`
