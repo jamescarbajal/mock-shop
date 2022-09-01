@@ -24,7 +24,7 @@ export default function Shop(props) {
 
 
   useEffect( () => {
-    getAllProducts();
+     getAllProducts();
   }, []);
 
 

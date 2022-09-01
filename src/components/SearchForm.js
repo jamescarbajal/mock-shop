@@ -11,7 +11,7 @@ export default function SearchForm() {
         </div>
         
       <form id="cateringForm" class="container-fluid p-3 w-100 d-flex flex-row justify-content-end border">
-        <div class="d-flex flex-row justify-content-evenly container-fluid">
+        <div class="d-flex flex-row justify-content-center container-fluid">
           <div class="mx-3">
             <button type="submit" class="btn btn-secondary">Filter</button>
           </div>
