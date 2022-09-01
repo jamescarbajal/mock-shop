@@ -10,16 +10,16 @@ export default function SearchForm() {
             <h1 class="my-4"> FIND YOUR FAVORITE JADE NOW! </h1>
         </div>
         
-        <form id="cateringForm" class="container-fluid p-3 w-100 d-flex flex-row justify-content-end border">
-        <div class="d-flex flex-row container-fluid w-50">
+      <form id="cateringForm" class="container-fluid p-3 w-100 d-flex flex-row justify-content-end border">
+        <div class="d-flex flex-row justify-content-evenly container-fluid">
           <div class="mx-3">
             <button type="submit" class="btn btn-secondary">Filter</button>
           </div>
-          <div class="w-100">
+          <div class="w-100" style={{ minWidth: '200px', maxWidth: '400px' }}>
             <input 
               name="searchInput" 
               type="text" 
-              class="form-control" 
+              class="form-control w-100" 
               id="searchInput" 
               placeholder="Search"
               value=""

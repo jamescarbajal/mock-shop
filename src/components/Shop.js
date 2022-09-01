@@ -2,6 +2,8 @@ import { ShopContainer } from './StyledComponents';
 import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import SearchForm from './SearchForm';
+import { CardContainer, MiniHeader } from './StyledComponents';
+import ProductCard from './ProductCard';
 
 
 export default function Shop(props) {
@@ -20,6 +22,7 @@ export default function Shop(props) {
       setIsLoading(false);
   };
 
+
   useEffect( () => {
     getAllProducts();
   }, []);
@@ -30,6 +33,34 @@ export default function Shop(props) {
       
         <ShopContainer>
           <SearchForm />
+
+          <div>
+            {!isLoading ? (
+            <div class="d-flex flex-row justify-content-center">
+              <CardContainer>
+
+                {productList.length > 0 ? (
+                  productList.map( (product) => (
+                    <ProductCard id={product.id} title={product.title} price={product.price} category={product.category} description={product.description} image={product.image} />
+                  ))
+                )
+                :
+                (
+                  <MiniHeader>
+                    No results found.
+                  </MiniHeader>
+                )}
+              </CardContainer>
+            </div>
+            )
+            :
+            (
+              <MiniHeader class="container-fluid text-center border" style={{ color: "blue" }}>
+                Loading...
+              </MiniHeader>
+            )}
+          </div>
+
         </ShopContainer>     
 
       </>

@@ -19,6 +19,34 @@ export const Banner = styled.div`
     color: blue;
 `;
 
+export const CardContainer = styled.div`
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    height: fit-content;
+    width: 90vw;
+    margin-top: 20px;
+    border: 1px solid gray;
+    z-index: -1;
+`;
+
+export const CardWrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    border: 1px solid gray;
+    box-shadow: 0px 4px 8px gray;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 300px;
+    height: auto;
+    min-height: 300px;
+    margin: 10px;
+`;
+
 export const CompanyLogo = styled.h1`
     position: absolute;
     top: 50%;
@@ -37,6 +65,7 @@ export const FooterContainer = styled.div`
     align-items: center;
     height: fit-content;
     width: 100%;
+    margin-top: 20px;
     border-top: 1px solid black;
     background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
@@ -113,7 +142,7 @@ export const HomeContainer = styled.div`
 
 export const MainContainer = styled.div`
     position: relative;
-    height: 100vh;
+    height: fit-content;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -121,6 +150,14 @@ export const MainContainer = styled.div`
     flex-direction: column;
     align-items: center;
     z-index: 1;
+`;
+
+export const MiniHeader = styled.div`
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 `;
 
 export const NavBarContainer = styled.div`
@@ -156,6 +193,7 @@ export const ShopContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
     z-index: 100;
