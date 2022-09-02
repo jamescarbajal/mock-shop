@@ -184,8 +184,8 @@ export const ModalCloseButton = styled.button`
     font-size: 20px;
     font-weight: 600;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 10;
+    right: 20px;
     height: 30px;
     width: 30px;
     box-sizing: content-box;
@@ -194,29 +194,44 @@ export const ModalCloseButton = styled.button`
     border-radius: 10px;
     box-shadow: 2px 2px 5px gray;
     background-color: transparent;
+    z-index: 1;
 `;
 
 export const ModalImage = styled.img`
-    height: 100%;
+    position: relative;
+    height: auto;
     width: auto;
+    max-width: 100%;
     max-height: 500px;
+    padding: 30px;
 `;
 
 export const ModalWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate( -50%, -55% );
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
     align-items: center;
     min-height: 500px;
-    height: auto;
-    width: auto;
-    max-height: 70vh;
-    max-width: 60vw;
+    height: 100%;
+    width: 100%;
+    max-height: 80vh;
+    max-width: 100%;
     text-align: justify;
+`;
+
+export const ModalWrapperContents = styled.div`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    padding: 15px;
+    justify-content: space-evenly;
+    align-items: center;
 `;
 
 export const NavBarContainer = styled.div`
