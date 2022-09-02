@@ -29,7 +29,6 @@ export const CardContainer = styled.div`
     width: 90vw;
     margin-top: 20px;
     border: 1px solid gray;
-    z-index: -1;
 `;
 
 export const CardHeader = styled.div`
@@ -38,7 +37,6 @@ export const CardHeader = styled.div`
     font-weight: 600;
     margin-top: 10px;
     text-align: center;
-    z-index: 100;
 `;
 
 export const CardWrapper = styled.div`
@@ -58,14 +56,6 @@ export const CardWrapper = styled.div`
     min-height: 300px;
     margin: 10px;
     overflow: hidden;
-    z-index: 100;
-`;
-
-export const CloseModalButton = styled.div`
-    font-size: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
 `;
 
 export const CompanyLogo = styled.h1`
@@ -99,7 +89,6 @@ export const HamburgerContainer = styled.div`
     padding-left: 15px;
     height: 100%;
     width: fit-content;
-    z-index: 10;
     overflow: show;
 `;
 
@@ -114,7 +103,7 @@ export const HeroImage = styled.div`
     background-size: cover;
     background-position: center;
     opacity: 70%;
-    z-index: -100;
+    z-index: -10;
 `;
 
 export const HeroSection = styled.div`
@@ -147,7 +136,6 @@ export const HeroText = styled.button`
     margin: 0;
     color: rgba(0, 0, 0, 0.6);
     background-color: rgba(0, 0, 0, 0);
-    z-index: 10;
 `;
 
 export const HomeContainer = styled.div`
@@ -158,7 +146,6 @@ export const HomeContainer = styled.div`
     margin: 0;
     display: flex;
     flex-flow: column;
-    z-index: 1;
 `;
 
 export const MainContainer = styled.div`
@@ -170,7 +157,6 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 1;
 `;
 
 export const MiniHeader = styled.div`
@@ -181,19 +167,43 @@ export const MiniHeader = styled.div`
     text-align: center;
 `;
 
+export const ModalCloseButton = styled.button`
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 30px;
+    width: 30px;
+    box-sizing: content-box;
+    padding-bottom: 5px;
+    border: 1px gray;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+    background-color: transparent;
+`;
+
+export const ModalImage = styled.img`
+height: 100%;
+width: auto;
+max-height: 500px;
+`;
+
 export const ModalWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+    flex-flow: column;
+    justify-content: space-evenly;
     align-items: center;
-    height: 100%;
-    width: 100%;
+    min-height: 500px;
+    height: auto;
+    width: auto;
+    max-height: 70vh;
+    max-width: 60vw;
     text-align: justify;
-    z-index: 100;
 `;
 
 export const NavBarContainer = styled.div`
@@ -238,7 +248,6 @@ export const ShopContainer = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
-    z-index: 100;
 `;
 
 export const StyledLink = styled.h3`

@@ -1,5 +1,5 @@
 import ReactModal from 'react-modal';
-import { ModalWrapper, CloseModalButton } from './StyledComponents';
+import { ModalWrapper, ModalCloseButton, ModalImage } from './StyledComponents';
 
 export default function ProductModal(props) {
 
@@ -12,12 +12,14 @@ export default function ProductModal(props) {
     return(
             <ReactModal isOpen={isModalOpen}>
                 <ModalWrapper>
-                        <div><img src={image}></img></div>
-                        <div>{title}</div>
-                        <div>{description}</div>
-                        <div>{id}</div>
-                        <div>{category}</div>
-                        <CloseModalButton onClick={handleCloseModal}>X</CloseModalButton>
+                        <ModalImage src={image}></ModalImage>
+                        <div class="mt-3">{title}</div>
+                        <div class="my-4">{description}</div>
+                        <div class="d-flex flex-row w-100 justify-content-between">
+                            <div>Product ID: {id}</div>
+                            <div>Category: {category}</div>
+                        </div>
+                        <ModalCloseButton onClick={handleCloseModal}>x</ModalCloseButton>
                 </ModalWrapper>
             </ReactModal>
 
