@@ -19,6 +19,19 @@ export const Banner = styled.div`
     color: blue;
 `;
 
+export const CardButton = styled.button`
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba( 80, 80, 80, 1);
+    height: 30px;
+    width: fit-content;
+    padding: 4px;
+    border: 1px gray;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px lightgray;
+    background-color: rgba( 200, 200, 255, 0.2);
+`;
+
 export const CardContainer = styled.div`
     position: relative;
     display: flex;
