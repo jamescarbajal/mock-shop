@@ -28,7 +28,6 @@ export const CardContainer = styled.div`
     height: fit-content;
     width: 90vw;
     margin-top: 20px;
-    border: 1px solid gray;
 `;
 
 export const CardHeader = styled.div`
@@ -146,6 +145,7 @@ export const HomeContainer = styled.div`
     margin: 0;
     display: flex;
     flex-flow: column;
+    z-index: 1;
 `;
 
 export const MainContainer = styled.div`
@@ -184,9 +184,9 @@ export const ModalCloseButton = styled.button`
 `;
 
 export const ModalImage = styled.img`
-height: 100%;
-width: auto;
-max-height: 500px;
+    height: 100%;
+    width: auto;
+    max-height: 500px;
 `;
 
 export const ModalWrapper = styled.div`
