@@ -38,13 +38,14 @@ export const CardHeader = styled.div`
     font-weight: 600;
     margin-top: 10px;
     text-align: center;
+    z-index: 100;
 `;
 
 export const CardWrapper = styled.div`
     position: relative;
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border: 1px solid gray;
     box-shadow: 0px 4px 8px gray;
@@ -56,6 +57,15 @@ export const CardWrapper = styled.div`
     max-height: 300px;
     min-height: 300px;
     margin: 10px;
+    overflow: hidden;
+    z-index: 100;
+`;
+
+export const CloseModalButton = styled.div`
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 `;
 
 export const CompanyLogo = styled.h1`
@@ -76,7 +86,7 @@ export const FooterContainer = styled.div`
     align-items: center;
     height: fit-content;
     width: 100%;
-    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid black;
     background-image: linear-gradient(176deg, rgba(40, 70, 100, 1), rgba(50, 50, 70, 0.45));
 `;
@@ -171,6 +181,21 @@ export const MiniHeader = styled.div`
     text-align: center;
 `;
 
+export const ModalWrapper = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-align: justify;
+    z-index: 100;
+`;
+
 export const NavBarContainer = styled.div`
     position: sticky;
     top: 0;
@@ -201,7 +226,7 @@ export const NavBarContents = styled.div`
 `;
 
 export const ProductImage = styled.img`
-height: auto;
+height: 100%;
 width: auto;
 max-width: 150px;
 `;
