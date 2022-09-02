@@ -10,12 +10,12 @@ export default function ProductModal(props) {
     };
 
     return(
-            <ReactModal isOpen={isModalOpen}>
+            <ReactModal style={{ overlay: { top: '60px', border: 'none' } }} isOpen={isModalOpen}>
                 <ModalCloseButton onClick={handleCloseModal}>x</ModalCloseButton>
                 <ModalWrapper>
                         <ModalImage src={image}></ModalImage>
                         <ModalWrapperContents>
-                            <div class="mt-3">{title}</div>
+                            <div class='mt-2' style={{ fontWeight: 'bold' }}>{title}</div>
                             <div class="my-4">{description}</div>
                             <div class="d-flex flex-row w-100 justify-content-between" style={{ maxWidth: '800px' }}>
                                 <div>Product ID: {id}</div>

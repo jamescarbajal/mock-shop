@@ -182,17 +182,18 @@ export const MiniHeader = styled.div`
 
 export const ModalCloseButton = styled.button`
     font-size: 20px;
-    font-weight: 600;
-    position: absolute;
-    top: 10;
-    right: 20px;
+    font-weight: 700;
+    position: sticky;
+    float: right;
+    top: 0;
+    right: 0;
     height: 30px;
     width: 30px;
     box-sizing: content-box;
     padding-bottom: 5px;
     border: 1px gray;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px gray;
+    box-shadow: 2px 2px 5px dimgrey;
     background-color: transparent;
     z-index: 1;
 `;
@@ -201,25 +202,26 @@ export const ModalImage = styled.img`
     position: relative;
     height: auto;
     width: auto;
-    max-width: 100%;
-    max-height: 500px;
-    padding: 30px;
+    max-width: 90%;
+    max-height: 550px;
+    padding: 15px;
 `;
 
 export const ModalWrapper = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate( -50%, -55% );
+    transform: translate( -50%, -50% );
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: flex-start;
     min-height: 500px;
-    height: 100%;
+    height: fit-content;
     width: 100%;
-    max-height: 80vh;
+    max-height: 90%;
     max-width: 100%;
-    text-align: justify;
+    text-align: left;
 `;
 
 export const ModalWrapperContents = styled.div`
@@ -229,9 +231,11 @@ export const ModalWrapperContents = styled.div`
     height: 100%;
     width: 100%;
     max-width: 1000px;
-    padding: 15px;
-    justify-content: space-evenly;
+    padding-left: 30px;
+    padding-right: 30px;
+    justify-content: flex-end;
     align-items: center;
+    padding-bottom: 20px;
 `;
 
 export const NavBarContainer = styled.div`
