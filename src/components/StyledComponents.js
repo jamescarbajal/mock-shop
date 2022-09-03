@@ -289,6 +289,7 @@ export const NavBarContents = styled.div`
     font-weight: 700;
     box-shadow: 5px 1px 8px gray;
     background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
 `;
 
 export const ProductImage = styled.img`

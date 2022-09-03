@@ -18,10 +18,12 @@ export default function NavBarLinks() {
             fontWeight: "bold",
             color: "black",
             textDecoration: "none",
+            border: 'none'
             } : {
                 fontWeight: "regular",
                 color: "black",
-                textDecoration: "none"
+                textDecoration: "none",
+                border: 'none'
             };
     };
 
@@ -40,7 +42,7 @@ export default function NavBarLinks() {
                 <div class="d-flex">
                     {!loggedInUser ? (
 
-                        <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/Login">
+                        <NavLink style={{ textDecoration: 'none', color: 'black', border: 'none' }} to="/Login">
                             <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Login" class="mx-2">
                                 <FontAwesomeIcon icon={faRightToBracket} />
                             </StyledLink>
