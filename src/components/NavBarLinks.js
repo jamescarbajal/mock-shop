@@ -6,6 +6,7 @@ import { StyledLink } from './StyledComponents';
 import { NavBarContents } from './StyledComponents';
 import { HamburgerContainer} from './StyledComponents';
 import HamburgerMenu from '../HamburgerMenu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function NavBarLinks() {
 
@@ -31,7 +32,7 @@ export default function NavBarLinks() {
                 </HamburgerContainer>
 
                 <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
-                    <CompanyLogo path="/">B R S</CompanyLogo>
+                    <CompanyLogo path="/">B | R | S</CompanyLogo>
                 </NavLink>
 
                 <div class="d-flex">
@@ -49,7 +50,7 @@ export default function NavBarLinks() {
                         </NavLink>
                     )}
 
-                        <StyledLink>Cart</StyledLink>
+                        <StyledLink><FontAwesomeIcon icon="fa-regular fa-cart-shopping" /></StyledLink>
 
                 </div>
         </NavBarContents>

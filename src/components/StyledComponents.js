@@ -83,6 +83,7 @@ export const CompanyLogo = styled.h1`
     width: fit-content;
     height: 100%;
     max-width: 650px;
+    padding-bottom: 10px;
 `;
 
 export const FooterContainer = styled.div`
@@ -288,7 +289,10 @@ export const ShopContainer = styled.div`
 
 export const StyledLink = styled.button`
     width: 60px;
-    text-align: center;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-style: inherit;
     font-weight: inherit;
     color: inherit;
@@ -297,8 +301,6 @@ export const StyledLink = styled.button`
     font-size: 14px;
     border: 0.5px solid gray;
     background-color: transparent;
-    border-radius: 1000px;
-    align-self: center;
-    padding: 10px;
+    border-radius: 100px;
 `;
 
