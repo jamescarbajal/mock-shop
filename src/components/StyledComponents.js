@@ -290,17 +290,7 @@ export const ShopContainer = styled.div`
 export const StyledLink = styled.button`
     width: 60px;
     height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-style: inherit;
-    font-weight: inherit;
-    color: inherit;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 14px;
-    border: 0.5px solid gray;
     background-color: transparent;
-    border-radius: 100px;
+    border: none;
 `;
 

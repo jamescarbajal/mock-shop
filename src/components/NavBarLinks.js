@@ -7,6 +7,7 @@ import { NavBarContents } from './StyledComponents';
 import { HamburgerContainer} from './StyledComponents';
 import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 export default function NavBarLinks() {
 
@@ -35,22 +36,28 @@ export default function NavBarLinks() {
                     <CompanyLogo path="/">B | R | S</CompanyLogo>
                 </NavLink>
 
+
                 <div class="d-flex">
                     {!loggedInUser ? (
+
                         <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/Login">
                             <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Login" class="mx-2">
-                                <div>Login</div>
+                                <FontAwesomeIcon icon={faRightToBracket} />
                             </StyledLink>
                         </NavLink>
                     ) 
                     : 
                     (
                         <NavLink to="/Account" >
-                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Account" class="mx-2">"Username"</StyledLink>
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Account" class="mx-2">
+                                <FontAwesomeIcon icon={faUser} />
+                            </StyledLink>
                         </NavLink>
                     )}
 
-                        <StyledLink><FontAwesomeIcon icon="fa-regular fa-cart-shopping" /></StyledLink>
+                        <StyledLink>
+                            <FontAwesomeIcon icon={faCartShopping} />
+                        </StyledLink>
 
                 </div>
         </NavBarContents>
