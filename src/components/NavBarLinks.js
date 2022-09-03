@@ -1,15 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { CompanyLogo, NavBarContainer } from './StyledComponents';
-import { StyledLink } from './StyledComponents';
-import { NavBarContents } from './StyledComponents';
-import { HamburgerContainer} from './StyledComponents';
+import { CompanyLogo, StyledLink, NavBarContents, HamburgerContainer, CartCircle } from './StyledComponents';
 import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons'
+import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import CartContext from '../contexts/Cart/CartContext';
 
 export default function NavBarLinks() {
+
+    const { cartItems } = useContext(CartContext);
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
@@ -57,6 +57,9 @@ export default function NavBarLinks() {
 
                         <StyledLink>
                             <FontAwesomeIcon icon={faCartShopping} />
+                            {cartItems.length > 0 && (
+                                <CartCircle>{cartItems.length}</CartCircle>
+                            )}
                         </StyledLink>
 
                 </div>

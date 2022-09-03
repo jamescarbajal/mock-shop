@@ -70,6 +70,25 @@ export const CardWrapper = styled.div`
     overflow: hidden;
 `;
 
+export const CartCircle = styled.div`
+    position: absolute;
+    font-size: 15px;
+    top: 15px;
+    right: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20px;
+    width: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 1px;
+    box-sizing: content-box;
+`;
+
 export const CompanyLogo = styled.h1`
     position: absolute;
     display: flex;
@@ -292,5 +311,7 @@ export const StyledLink = styled.button`
     height: 40px;
     background-color: transparent;
     border: none;
+    padding: 0;
+    box-sizing: content-box;
 `;
 

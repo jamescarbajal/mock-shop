@@ -18,7 +18,7 @@ export default function ProductCard(props) {
     return(
         <>
             <CardWrapper>
-                <ProductImage src={image}></ProductImage>
+                <ProductImage src={image} alt={title}></ProductImage>
                 <CardHeader>{title}</CardHeader>
                 <div class="mt-2 d-flex flex-row justify-content-between w-100">
                     <CardButton onClick={ViewProductClick}>VIEW</CardButton>
