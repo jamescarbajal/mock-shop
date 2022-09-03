@@ -72,12 +72,17 @@ export const CardWrapper = styled.div`
 
 export const CompanyLogo = styled.h1`
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -65%);
-    font-size: inherit;
+    transform: translate(-50%, -50%);
+    font-size: 2vmin 3vw;
     font-weight: inherit;
-    color: inherit;
+    width: fit-content;
+    height: 100%;
+    max-width: 650px;
 `;
 
 export const FooterContainer = styled.div`
@@ -282,7 +287,8 @@ export const ShopContainer = styled.div`
 `;
 
 export const StyledLink = styled.button`
-    display: flex;
+    width: 60px;
+    text-align: center;
     font-style: inherit;
     font-weight: inherit;
     color: inherit;

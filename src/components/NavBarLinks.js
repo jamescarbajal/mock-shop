@@ -14,8 +14,8 @@ export default function NavBarLinks() {
     function styleByActiveStatus(isActive) {
         return isActive ? { 
             fontWeight: "bold",
-            color: "blue",
-            textDecoration: "none"
+            color: "black",
+            textDecoration: "none",
             } : {
                 fontWeight: "regular",
                 color: "black",
@@ -31,21 +31,21 @@ export default function NavBarLinks() {
                 </HamburgerContainer>
 
                 <NavLink to="/" style={{ textDecoration: "none", color: "black" }}>
-                    <CompanyLogo path="/">Logo/Company Name</CompanyLogo>
+                    <CompanyLogo path="/">B R S</CompanyLogo>
                 </NavLink>
 
                 <div class="d-flex">
                     {!loggedInUser ? (
-                        <NavLink to="/Login" style={({isActive}) => styleByActiveStatus(isActive)}>
-                            <StyledLink path="/Login" class="mx-2">
+                        <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/Login">
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Login" class="mx-2">
                                 <div>Login</div>
                             </StyledLink>
                         </NavLink>
                     ) 
                     : 
                     (
-                        <NavLink to="/Account" style={({isActive}) => styleByActiveStatus(isActive)}>
-                            <StyledLink path="/Account" class="mx-2">"Username"</StyledLink>
+                        <NavLink to="/Account" >
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Account" class="mx-2">"Username"</StyledLink>
                         </NavLink>
                     )}
 
