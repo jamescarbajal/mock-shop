@@ -49,9 +49,8 @@ export default function NavBarLinks() {
                         </NavLink>
                     )}
 
-                    <NavLink to="/Cart" style={({isActive}) => styleByActiveStatus(isActive)}>
-                        <StyledLink path="/Cart" class="mx-2">Cart</StyledLink>
-                    </NavLink>
+                        <StyledLink>Cart</StyledLink>
+
                 </div>
         </NavBarContents>
     </>

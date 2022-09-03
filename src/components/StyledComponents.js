@@ -101,7 +101,7 @@ export const HamburgerContainer = styled.div`
     padding-left: 15px;
     height: 100%;
     width: fit-content;
-    overflow: show;
+    overflow: hidden;
 `;
 
 export const HeroImage = styled.div`
@@ -127,7 +127,7 @@ export const HeroSection = styled.div`
     z-index: -10;
 `;
 
-export const HeroText = styled.button`
+export const HeroText = styled.div`
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -252,9 +252,8 @@ export const NavBarContainer = styled.div`
 
 export const NavBarContents = styled.div`
     position: relative;
-    padding: 22px;
-    padding-top: 30px;
-    height: 100%;
+    padding: 10px;
+    height: fit-content;
     max-height: 50px;
     width: 100%;
     display: flex;
@@ -282,14 +281,18 @@ export const ShopContainer = styled.div`
     width: 100%;
 `;
 
-export const StyledLink = styled.h3`
+export const StyledLink = styled.button`
     display: flex;
     font-style: inherit;
     font-weight: inherit;
     color: inherit;
-    margin-bottom: 13px;
     margin-left: 5px;
     margin-right: 5px;
-    font-size: 16px;
+    font-size: 14px;
+    border: 0.5px solid gray;
+    background-color: transparent;
+    border-radius: 1000px;
+    align-self: center;
+    padding: 10px;
 `;
 
