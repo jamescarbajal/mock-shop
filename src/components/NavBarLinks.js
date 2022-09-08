@@ -1,17 +1,30 @@
 import { NavLink } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { CompanyLogo, StyledLink, NavBarContents, HamburgerContainer, CartCircle } from './StyledComponents';
 import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import CartContext from '../contexts/Cart/CartContext';
+import CartModal from './CartModal';
 
 export default function NavBarLinks() {
 
     const { cartItems } = useContext(CartContext);
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+
+    const [ isCartOpen, setIsCartOpen ] = useState(false);
+
+    const ViewCartToggle = (e) => {
+        e.preventDefault();
+        {!isCartOpen ? 
+            (
+                setIsCartOpen(true)
+            ) : (
+                setIsCartOpen(false)
+            )};
+        };
 
     function styleByActiveStatus(isActive) {
         return isActive ? { 
@@ -57,14 +70,17 @@ export default function NavBarLinks() {
                         </NavLink>
                     )}
 
-                        <StyledLink>
+                        <StyledLink onClick={ViewCartToggle} >
                             <FontAwesomeIcon icon={faCartShopping} />
                             {cartItems.length > 0 && (
                                 <CartCircle>{cartItems.length}</CartCircle>
                             )}
                         </StyledLink>
-
+                
                 </div>
+
+                <CartModal isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+                
         </NavBarContents>
     </>
     );

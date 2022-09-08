@@ -101,6 +101,19 @@ export const CompanyLogo = styled.h1`
     padding-bottom: 10px;
 `;
 
+export const CartModalWrapper = styled.div`
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 200px;
+    height: fit-content;
+    max-width: 100%;
+    text-align: left;
+    border: 1px solid black;
+    z-index: 10;
+`;
+
 export const FooterContainer = styled.div`
     position: relative;
     display: flex;

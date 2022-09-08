@@ -10,7 +10,7 @@ export default function ProductModal(props) {
     };
 
     return(
-            <ReactModal style={{ overlay: { top: '60px', border: 'none' } }} isOpen={isModalOpen}>
+            <ReactModal style={{ overlay: { top: '60px', border: 'none', zIndex: '1' } }} isOpen={isModalOpen}>
                 <ModalCloseButton onClick={handleCloseModal}>x</ModalCloseButton>
                 <ModalWrapper>
                         <ModalImage src={image}></ModalImage>
