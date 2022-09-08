@@ -55,19 +55,15 @@ export const CardWrapper = styled.div`
     position: relative;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid gray;
     box-shadow: 0px 4px 8px gray;
     border-radius: 10px;
     padding: 10px;
-    min-width: 300px;
-    max-width: 300px;
-    height: auto;
-    max-height: 300px;
-    min-height: 300px;
+    height: 300px;
+    width: 300px;
     margin: 10px;
-    overflow: hidden;
 `;
 
 export const CartCircle = styled.div`
@@ -293,9 +289,12 @@ export const NavBarContents = styled.div`
 `;
 
 export const ProductImage = styled.img`
-height: 100%;
-width: auto;
-max-width: 150px;
+    position: relative;
+    height: 100%;
+    max-height: 150px;
+    width: auto;
+    max-width: 150px;
+
 `;
 
 export const ShopContainer = styled.div`
