@@ -5,7 +5,7 @@ export default function SearchForm() {
       const [productName, setProductName] = useState("");
 
     return(
-    <>
+    <div style={{ position: 'absolute', marginTop: '30px' }}>
         <div class="d-flex justify-content-center mt-5">
             <h1 class="my-4"> FIND YOUR FAVORITE JADE NOW! </h1>
         </div>
@@ -30,6 +30,6 @@ export default function SearchForm() {
           </div>
         </div>
       </form>
-    </>
+    </div>
     );
 };

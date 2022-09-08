@@ -6,6 +6,7 @@ import { UserProvider } from './contexts/UserContext';
 import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
 import Shop from './components/Shop';
+import Login from './components/Login';
 
 
 function App() {
@@ -17,8 +18,8 @@ function App() {
               <Route path="/" element = {<HeaderFooter />}>
                 <Route index element = {<Home />} />
                 <Route exact path="/shop" element={<Shop />} />
-                {/* <Route path="/Login" element = {<Login />} />
-                <Route path="#" element = {
+                <Route path="/Login" element = {<Login />} />
+                {/* <Route path="#" element = {
                   <AuthChecker>
                     <# />
                   </AuthChecker>

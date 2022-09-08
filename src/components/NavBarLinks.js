@@ -56,7 +56,7 @@ export default function NavBarLinks() {
                     {!loggedInUser ? (
 
                         <NavLink style={{ textDecoration: 'none', color: 'black', border: 'none' }} to="/Login">
-                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Login" class="mx-2">
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="Login" class="mx-2">
                                 <FontAwesomeIcon icon={faRightToBracket} />
                             </StyledLink>
                         </NavLink>

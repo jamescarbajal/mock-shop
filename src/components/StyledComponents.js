@@ -40,7 +40,7 @@ export const CardContainer = styled.div`
     justify-content: space-evenly;
     height: fit-content;
     width: 90vw;
-    margin-top: 20px;
+    margin-top: 240px;
 `;
 
 export const CardHeader = styled.div`
@@ -195,15 +195,28 @@ export const HomeContainer = styled.div`
     z-index: 1;
 `;
 
+export const LoginContainer = styled.div`
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`;
+
 export const MainContainer = styled.div`
     position: relative;
+    min-height: 100vh;
     height: fit-content;
+    min-width: 100vw;
     width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 `;
 
 export const MiniHeader = styled.div`
@@ -307,7 +320,6 @@ export const ProductImage = styled.img`
     max-height: 150px;
     width: auto;
     max-width: 150px;
-
 `;
 
 export const ShopContainer = styled.div`
@@ -317,6 +329,28 @@ export const ShopContainer = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
+`;
+
+export const StyledButton = styled.button`
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: rgba( 75, 75, 75, 1);
+    height: 30px;
+    width: 100%;
+    padding: 4px;
+    border: 1px gray;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px gray;
+    background-color: rgba( 200, 200, 255, 0.5);
+`;
+
+export const StyledInput = styled.input`
+
+`;
+
+export const StyledLabel = styled.label`
+
 `;
 
 export const StyledLink = styled.button`
