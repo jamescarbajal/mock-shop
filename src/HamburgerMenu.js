@@ -16,7 +16,7 @@ export default props => {
         Specials
       </a>
 
-      <a className="menu-item" href="/sbout">
+      <a className="menu-item" href="/about">
         About
       </a>
 
