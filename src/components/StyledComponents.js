@@ -114,7 +114,7 @@ export const CartModalWrapper = styled.div`
     z-index: 10;
 `;
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.footer`
     position: relative;
     display: flex;
     flex-direction: row;
@@ -199,10 +199,12 @@ export const LoginContainer = styled.div`
     position: relative;
     margin-top: 80px;
     margin-bottom: 75px;
+    min-height: 400px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-self: flex-start;
 `;
 
 export const MainContainer = styled.div`
@@ -334,11 +336,13 @@ export const ShopContainer = styled.div`
 export const StyledButton = styled.button`
     font-size: 14px;
     font-weight: 700;
-    margin-top: 10px;
+    margin-top: 20px;
     color: rgba( 75, 75, 75, 1);
     height: 30px;
-    width: 100%;
+    width: 200px;
     padding: 4px;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px gray;
     border-radius: 5px;
     box-shadow: 3px 5px 5px gray;
@@ -346,11 +350,12 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledInput = styled.input`
-
+    min-width: 300px;
+    border-radius: 5px;
 `;
 
 export const StyledLabel = styled.label`
-
+    font-weight: 600;
 `;
 
 export const StyledLink = styled.button`

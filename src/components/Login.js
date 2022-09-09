@@ -41,13 +41,18 @@ export default function Login() {
             <MiniHeader>Login</MiniHeader>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
-                <LabeledTextInput name="Email" value={email} setValue={setEmail} />
+                <LabeledTextInput 
+                    name="Email" 
+                    value={email} 
+                    setValue={setEmail} 
+                />
                 <LabeledTextInput 
                     name="Password" 
                     value={password} 
                     setValue={setPassword} 
                     inputType="password"
                 />
+                
                 <StyledButton type="submit">Login</StyledButton>
             </form>
             {showLoginError && <div>Invalid email or password.</div>}
