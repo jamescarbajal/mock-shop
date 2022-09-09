@@ -197,7 +197,7 @@ export const HomeContainer = styled.div`
 
 export const LoginContainer = styled.div`
     position: relative;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-bottom: 75px;
     min-height: 400px;
     height: 100%;

@@ -14,25 +14,24 @@ const testUser = {
 
 export default function Login() {
 
-    const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+    const { setLoggedInUser } = useContext(UserContext);
 
     const [ email, setEmail ] = useState("");
 
     const [ password, setPassword ] = useState("");
 
-    const [ showLoginError, setShowLoginError ] = useState("");
+    const [ showLoginError, setShowLoginError ] = useState(false);
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.prevenDefault();
+    const handleLoginSubmit = (e) => {
         if (email === testUser.email && password === testUser.password) {
             setLoggedInUser(testUser);
-            navigate('/Shop');
+            navigate('/shop');
         } else {
             setShowLoginError(true);
         }
-    };
+    }
 
     return (
 
@@ -40,7 +39,7 @@ export default function Login() {
 
             <MiniHeader>Login</MiniHeader>
 
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+            <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
                 <LabeledTextInput 
                     name="Email" 
                     value={email} 
@@ -52,10 +51,11 @@ export default function Login() {
                     setValue={setPassword} 
                     inputType="password"
                 />
-                
+
                 <StyledButton type="submit">Login</StyledButton>
             </form>
-            {showLoginError && <div>Invalid email or password.</div>}
+
+            {showLoginError && <div style={{ marginTop: '20px', color: 'darksteelblue' }}>Invalid email or password.</div>}
 
         </LoginContainer>
 
