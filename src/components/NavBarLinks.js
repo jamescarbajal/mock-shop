@@ -6,7 +6,7 @@ import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
 import CartContext from '../contexts/Cart/CartContext';
-import CartModal from './CartModal';
+import CartModal from './Cart';
 
 export default function NavBarLinks() {
 
@@ -29,7 +29,7 @@ export default function NavBarLinks() {
     function styleByActiveStatus(isActive) {
         return isActive ? { 
             fontWeight: "bold",
-            color: "black",
+            color: "navy",
             textDecoration: "none",
             border: 'none'
             } : {
@@ -56,7 +56,7 @@ export default function NavBarLinks() {
                     {!loggedInUser ? (
 
                         <NavLink style={{ textDecoration: 'none', color: 'black', border: 'none' }} to="/Login">
-                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="Login" class="mx-2">
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Login" class="mx-2">
                                 <FontAwesomeIcon icon={faRightToBracket} />
                             </StyledLink>
                         </NavLink>
@@ -69,17 +69,16 @@ export default function NavBarLinks() {
                             </StyledLink>
                         </NavLink>
                     )}
-
-                        <StyledLink onClick={ViewCartToggle} >
-                            <FontAwesomeIcon icon={faCartShopping} />
-                            {cartItems.length > 0 && (
-                                <CartCircle>{cartItems.length}</CartCircle>
-                            )}
-                        </StyledLink>
+                        <NavLink to="/Cart">
+                            <StyledLink path="/Cart" style={ ({isActive}) => styleByActiveStatus(isActive)}>
+                                <FontAwesomeIcon icon={faCartShopping} />
+                                {cartItems.length > 0 && (
+                                    <CartCircle>{cartItems.length}</CartCircle>
+                                )}
+                            </StyledLink>
+                        </NavLink>
                 
                 </div>
-
-                <CartModal isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
 
         </NavBarContents>
     </>

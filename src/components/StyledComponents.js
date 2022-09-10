@@ -85,6 +85,15 @@ export const CartCircle = styled.div`
     box-sizing: content-box;
 `;
 
+export const CartWrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+`;
+
 export const CompanyLogo = styled.h1`
     position: absolute;
     display: flex;
@@ -99,19 +108,6 @@ export const CompanyLogo = styled.h1`
     height: 100%;
     max-width: 650px;
     padding-bottom: 10px;
-`;
-
-export const CartModalWrapper = styled.div`
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-height: 200px;
-    height: fit-content;
-    max-width: 100%;
-    text-align: left;
-    border: 1px solid black;
-    z-index: 10;
 `;
 
 export const FooterContainer = styled.footer`

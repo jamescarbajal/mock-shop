@@ -8,19 +8,19 @@ export default props => {
         Home
       </a>
 
-      <a className="menu-item" href="/shop">
+      <a className="menu-item" href="/Shop">
         Shop
       </a>
 
-      <a className="menu-item" href="/specials">
+      <a className="menu-item" href="/Specials">
         Specials
       </a>
 
-      <a className="menu-item" href="/about">
+      <a className="menu-item" href="/About">
         About
       </a>
 
-      <a className="menu-item" href="/contact">
+      <a className="menu-item" href="/Contact">
         Contact
       </a>
     </Menu>

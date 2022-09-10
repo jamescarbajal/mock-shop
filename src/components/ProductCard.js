@@ -1,11 +1,14 @@
 import { CardWrapper, CardHeader, ProductImage, CardButton } from "./StyledComponents";
 import { useState, useContext } from 'react';
+import CartContext from '../contexts/Cart/CartContext';
 import LazyLoad from 'react-lazy-load';
 import ProductModal from './ProductModal';
 
 export default function ProductCard(props) {
 
     const { product, category, description, id, image, price, rating, count, title } = props;
+
+    const { addToCart, increase, cartItems, sumItems, itemCount } = useContext(CartContext);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -28,7 +31,7 @@ export default function ProductCard(props) {
                         VIEW
                     </CardButton>
                     
-                    <CardButton>
+                    <CardButton onClick={''}>
                         ADD TO CART
                     </CardButton>
                 </div>

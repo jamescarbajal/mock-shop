@@ -7,6 +7,7 @@ import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
 import Shop from './components/Shop';
 import Login from './components/Login';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -17,8 +18,9 @@ function App() {
             <Routes>
               <Route path="/" element = {<HeaderFooter />}>
                 <Route index element = {<Home />} />
-                <Route exact path="/shop" element={<Shop />} />
+                <Route exact path="/Shop" element={<Shop />} />
                 <Route path="/Login" element = {<Login />} />
+                <Route path="/Cart" element = {<Cart />} />
                 {/* <Route path="#" element = {
                   <AuthChecker>
                     <# />

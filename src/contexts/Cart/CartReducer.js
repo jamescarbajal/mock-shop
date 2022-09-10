@@ -16,12 +16,12 @@ const CartReducer = (state, action) => {
     switch (action.type) {
 
         case ADD_TO_CART:
-            if (!state.cartItems.find( (item) => item.id === action.payload.id)){
-                state.cartItems.push({
+            if (!state.cartItems.find((item) => item.id === action.payload.id)) {
+              state.cartItems.push({
                 ...action.payload,
                 quantity: 1,
-                });
-            };
+              });
+            }
             return {
                 ...state,
                 ...sumItems(state.cartItems),
