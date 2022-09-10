@@ -89,9 +89,10 @@ export const CartWrapper = styled.div`
     position: relative;
     display: flex;
     flex-flow: row;
+    align-self: flex-start;
     height: 100%;
     width: 100%;
-    text-align: left;
+    margin-top: 125px;
 `;
 
 export const CompanyLogo = styled.h1`
