@@ -5,12 +5,8 @@ import { CompanyLogo, StyledLink, NavBarContents, HamburgerContainer, CartCircle
 import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
-import CartContext from '../contexts/Cart/CartContext';
-import CartModal from './Cart';
 
 export default function NavBarLinks() {
-
-    const { cartItems } = useContext(CartContext);
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
@@ -72,9 +68,9 @@ export default function NavBarLinks() {
                         <NavLink to="/Cart">
                             <StyledLink path="/Cart" style={ ({isActive}) => styleByActiveStatus(isActive)}>
                                 <FontAwesomeIcon icon={faCartShopping} />
-                                {cartItems.length > 0 && (
+                                {/* {cartItems.length > 0 && (
                                     <CartCircle>{cartItems.length}</CartCircle>
-                                )}
+                                )} */}
                             </StyledLink>
                         </NavLink>
                 

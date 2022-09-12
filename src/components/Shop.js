@@ -1,4 +1,3 @@
-import { ShopContainer } from './StyledComponents';
 import { useState, useContext, useEffect } from 'react';
 import { ThemeContext } from 'styled-components';
 import SearchForm from './SearchForm';
@@ -9,8 +8,8 @@ import ProductCard from './ProductCard';
 export default function Shop(props) {
 
   const [productList, setProductList] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
 
+  const [isLoading, setIsLoading] = useState(false);
   
   const getAllProducts = async () => {
       setIsLoading(true);

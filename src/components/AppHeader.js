@@ -1,8 +1,7 @@
 // import { ThemeToggle } from './ThemeToggle';
 import NavBarLinks from './NavBarLinks';
 import AnnouncementsBar from './AnnouncementsBar'
-import { HamburgerContainer, NavBarContainer } from './StyledComponents';
-import HamburgerMenu from '../HamburgerMenu';
+import { NavBarContainer } from './StyledComponents';
 
 export default function AppHeader() {
 

@@ -321,15 +321,6 @@ export const ProductImage = styled.img`
     max-width: 150px;
 `;
 
-export const ShopContainer = styled.div`
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-`;
-
 export const StyledButton = styled.button`
     font-size: 14px;
     font-weight: 700;
