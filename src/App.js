@@ -3,6 +3,7 @@ import Home from './components/Home';
 import { ThemeProvider} from './contexts/ThemeContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
+import { CartProvider } from './contexts/Cart/CartContext';
 import HeaderFooter from './components/HeaderFooter';
 import NotFound from './components/NotFound';
 import Shop from './components/Shop';
@@ -14,6 +15,7 @@ function App() {
   return (
     <ThemeProvider>
       <UserProvider>
+        <CartProvider>
           <BrowserRouter>
             <Routes>
               <Route path="/" element = {<HeaderFooter />}>
@@ -30,6 +32,7 @@ function App() {
               </Route>
             </Routes>
           </BrowserRouter>
+        </CartProvider>
       </UserProvider>
     </ThemeProvider>
   );

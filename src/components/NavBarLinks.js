@@ -1,26 +1,21 @@
 import { NavLink } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContext';
 import { CompanyLogo, StyledLink, NavBarContents, HamburgerContainer, CartCircle } from './StyledComponents';
 import HamburgerMenu from '../HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faUser, faRightToBracket } from '@fortawesome/free-solid-svg-icons';
+import { CartContext } from '../contexts/Cart/CartContext';
 
 export default function NavBarLinks() {
 
     const { loggedInUser, setLoggedInUser } = useContext(UserContext);
 
+    const { cartItems, setCartItems } = useContext(CartContext);
+
     const [ isCartOpen, setIsCartOpen ] = useState(false);
 
-    const ViewCartToggle = (e) => {
-        e.preventDefault();
-        {!isCartOpen ? 
-            (
-                setIsCartOpen(true)
-            ) : (
-                setIsCartOpen(false)
-            )};
-        };
+    console.log('Cart Items: ', cartItems);
 
     function styleByActiveStatus(isActive) {
         return isActive ? { 
@@ -68,9 +63,9 @@ export default function NavBarLinks() {
                         <NavLink to="/Cart">
                             <StyledLink path="/Cart" style={ ({isActive}) => styleByActiveStatus(isActive)}>
                                 <FontAwesomeIcon icon={faCartShopping} />
-                                {/* {cartItems.length > 0 && (
+                                {cartItems.length > 0 && (
                                     <CartCircle>{cartItems.length}</CartCircle>
-                                )} */}
+                                )}
                             </StyledLink>
                         </NavLink>
                 

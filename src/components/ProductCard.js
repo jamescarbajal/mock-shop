@@ -1,5 +1,6 @@
 import { CardWrapper, CardHeader, ProductImage, CardButton } from "./StyledComponents";
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
+import { CartContext } from '../contexts/Cart/CartContext';
 import LazyLoad from 'react-lazy-load';
 import ProductModal from './ProductModal';
 
@@ -9,11 +10,18 @@ export default function ProductCard(props) {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const { cartItems, setCartItems } = useContext(CartContext);
+
+    const AddToCart = (itemId) => {
+        const prevCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
+        setCartItems([...prevCart, {id: itemId}]);
+    };
+
     const ViewProductClick = (e) => {
         e.preventDefault();
         setIsModalOpen(true);
     };
-
+    
     return(
         <>
             <CardWrapper>
@@ -28,7 +36,7 @@ export default function ProductCard(props) {
                         VIEW
                     </CardButton>
                     
-                    <CardButton onClick={''}>
+                    <CardButton onClick={() => AddToCart(id)}>
                         ADD TO CART
                     </CardButton>
                 </div>

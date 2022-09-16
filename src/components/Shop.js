@@ -10,6 +10,10 @@ export default function Shop(props) {
   const [productList, setProductList] = useState({});
 
   const [isLoading, setIsLoading] = useState(false);
+
+  const cartLocalStorage = JSON.parse(localStorage.getItem('CART_ITEMS') || '[]');
+
+  const [cartItems, setCartItems] = useState(cartLocalStorage);
   
   const getAllProducts = async () => {
       setIsLoading(true);
@@ -21,11 +25,9 @@ export default function Shop(props) {
       setIsLoading(false);
   };
 
-
   useEffect( () => {
      getAllProducts();
   }, []);
-
 
   return(
       <>
