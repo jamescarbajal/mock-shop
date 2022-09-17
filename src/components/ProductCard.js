@@ -12,9 +12,24 @@ export default function ProductCard(props) {
 
     const { cartItems, setCartItems } = useContext(CartContext);
 
-    const AddToCart = (itemId) => {
-        const prevCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
-        setCartItems([...prevCart, {id: itemId, quantity: 1}]);
+    function checkCart(currentCart, selectedId){
+        for(const e of currentCart){
+            if (e.id === selectedId){
+                console.log(e.id);
+                return e.id;
+            } else return false;
+        }
+    }
+
+    const AddToCart = (selectedId) => {
+        const currentCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
+        const check = checkCart(selectedId);
+        console.log('Check result: ', check);
+        if (!check) {
+            setCartItems([...currentCart, {id: selectedId, quantity: 1}]);
+        } else {
+            setCartItems(currentCart => [...currentCart.]);
+        }
     };
 
     const ViewProductClick = (e) => {

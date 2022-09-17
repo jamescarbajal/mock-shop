@@ -19,7 +19,7 @@ export default function Cart(props) {
       setIsLoading(true);
       const cartItems = (e);
       console.log('Cart Items: ', cartItems);
-      for ( const item of cartItems) {
+      for (const item of cartItems) {
         const id = item.id;
         const url = `https://fakestoreapi.com/products/${id}`;
         const response = await fetch(url);
