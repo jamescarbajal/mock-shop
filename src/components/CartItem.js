@@ -1,4 +1,4 @@
-import { CardWrapper, ProductImage, CardHeader } from "./StyledComponents";
+import { ProductImage, CartHeader, CartItemContainer, CartDetail, CartDescription } from "./StyledComponents";
 import { useState, useEffect } from "react";
 
 export default function CartItem(props) {
@@ -9,14 +9,17 @@ export default function CartItem(props) {
 
     return(
     <>
-            <div styel={{ width: '400px', height: '600px' }} class="d-flex flex-column align-items-center h-100 w-100 my-3 justify-content-evenly">
-                <CardHeader>{id}</CardHeader>
+        <div class="col-12 col-md-8">
+            <CartItemContainer>
                 <ProductImage src={image} alt={title}></ProductImage>
-                <CardHeader>{title}</CardHeader>
-                <CardHeader style={{ width: '400px', textAlign: 'left' }}>{description}</CardHeader>
-                <CardHeader>{category}</CardHeader>
-                <CardHeader>{price}</CardHeader>
-            </div>
+                <CartHeader>{title}</CartHeader>
+                <CartDescription>{description}</CartDescription>
+                <CartDetail>${price}</CartDetail>
+            </CartItemContainer>
+        </div>
+        <div class="col-12 col-md-8">
+
+        </div>
     </>
     );
 };

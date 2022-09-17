@@ -3,6 +3,7 @@ import { ThemeContext } from 'styled-components';
 import SearchForm from './SearchForm';
 import { CardContainer, MiniHeader } from './StyledComponents';
 import ProductCard from './ProductCard';
+import { CartContext } from '../contexts/Cart/CartContext';
 
 
 export default function Shop(props) {
@@ -11,9 +12,7 @@ export default function Shop(props) {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const cartLocalStorage = JSON.parse(localStorage.getItem('CART_ITEMS') || '[]');
-
-  const [cartItems, setCartItems] = useState(cartLocalStorage);
+  const [cartItems, setCartItems] = useState(CartContext);
   
   const getAllProducts = async () => {
       setIsLoading(true);

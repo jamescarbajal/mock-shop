@@ -85,6 +85,47 @@ export const CartCircle = styled.div`
     box-sizing: content-box;
 `;
 
+export const CartHeader = styled.div`
+    display: flex;
+    font-weight: 600;
+    width: 50px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+`;
+
+export const CartDescription = styled.div`
+    display: flex;
+    width: 300px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px
+`;
+
+export const CartDetail = styled.div`
+    display: flex;
+    width: 50px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px
+`;
+
+export const CartItemContainer = styled.div`
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+`;
+
 export const CartWrapper = styled.div`
     position: relative;
     display: flex;
@@ -144,7 +185,7 @@ export const HeroImage = styled.div`
     height: 100%;
     background-image: url(${HomeHeroImage});
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 105%;
     background-position: center;
     opacity: 70%;
     z-index: -10;
