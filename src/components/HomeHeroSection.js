@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import { HeroSection } from './StyledComponents';
 import { HeroImage } from './StyledComponents';
 import { HeroText } from './StyledComponents';
@@ -18,7 +19,9 @@ export default function HomeHeroSection() {
     return (
     <>
         <HeroSection>
-            <HeroText onMouseOver={hoverStyling} onMouseLeave={noHoverStyling}>BROTHER RYAN SHOP</HeroText>
+            <NavLink to="/Shop">
+                <HeroText path='/Shop' onMouseOver={hoverStyling} onMouseLeave={noHoverStyling}>BROTHER RYAN SHOP</HeroText>
+            </NavLink>
             <HeroImage/>
         </HeroSection>
     </>

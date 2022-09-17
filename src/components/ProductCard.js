@@ -14,7 +14,7 @@ export default function ProductCard(props) {
 
     const AddToCart = (itemId) => {
         const prevCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
-        setCartItems([...prevCart, {id: itemId}]);
+        setCartItems([...prevCart, {id: itemId, quantity: 1}]);
     };
 
     const ViewProductClick = (e) => {
