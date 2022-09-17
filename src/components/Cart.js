@@ -15,6 +15,7 @@ export default function Cart(props) {
   const [ currentCartData, setCurrentCartData ] = useState([]);
 
     async function getItemInfo(e) {
+      setIsLoading(true);
       const cartItems = (e);
       console.log('Cart Items: ', cartItems);
       for ( const item of cartItems) {
@@ -25,12 +26,11 @@ export default function Cart(props) {
         console.log('Data: ', data);
         setCurrentCartData(currentCartData => [...currentCartData, data]);
       }
+      setIsLoading(false);
   };
 
-  useEffect( async () => {
-    setIsLoading(true);
-    await getItemInfo(cartItems);
-    setIsLoading(false);
+  useEffect( () => {
+    getItemInfo(cartItems);
   }, []);
 
   console.log('Finished data: ', currentCartData);
