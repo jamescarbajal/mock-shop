@@ -59,7 +59,7 @@ export default function Cart(props) {
                     <MiniHeader>
                       Cart is EMPTY!! 
                     </MiniHeader>
-                    <MiniHeader>
+                    <MiniHeader style={{ padding: '30px' }}>
                       Why don't you find your next favorite piece in our <NavLink style={{ weight: 'bold', textDecoration: 'none', color: 'blue' }} to="/Shop">SHOP</NavLink>!
                     </MiniHeader>
                   </>

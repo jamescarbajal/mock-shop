@@ -60,7 +60,7 @@ export default function Login() {
 
 
             <MiniHeader style={{ position: 'absolute', top: '70%' }}>
-                or <NavLink style={{ textDecoration: 'none', color: 'darkblue' }} to="/#">Create Account</NavLink>
+                or <NavLink style={{ textDecoration: 'none', color: 'darkblue' }} to="/CreateAccount">Create Account</NavLink>
             </MiniHeader>
 
         </LoginContainer>

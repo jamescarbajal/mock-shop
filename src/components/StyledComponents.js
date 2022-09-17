@@ -185,7 +185,7 @@ export const HeroImage = styled.div`
     height: 100%;
     background-image: url(${HomeHeroImage});
     background-repeat: no-repeat;
-    background-size: 105%;
+    background-size: cover;
     background-position: center;
     opacity: 70%;
     z-index: -10;
