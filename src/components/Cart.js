@@ -1,4 +1,5 @@
-import { CardHeader, CardWrapper, CartWrapper, MiniHeader } from './StyledComponents';
+import { CardHeader, CardWrapper, CartWrapper, MiniHeader, StyledLink } from './StyledComponents';
+import Link, { NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { useEffect } from 'react';
 import CartItem from './CartItem';
@@ -42,7 +43,7 @@ export default function Cart(props) {
 
             {isLoading ? (
 
-              <MiniHeader>Loading...</MiniHeader>
+              <MiniHeader>Loading cart...</MiniHeader>
 
             ):(
               <CartWrapper>
@@ -54,11 +55,14 @@ export default function Cart(props) {
                   ))
 
                 ):(
-                  
-                  <MiniHeader>
-                    Cart is EMPTY!!
-                  </MiniHeader>
-                  
+                  <>
+                    <MiniHeader>
+                      Cart is EMPTY!! 
+                    </MiniHeader>
+                    <MiniHeader>
+                      Why don't you find your next favorite piece in our <NavLink style={{ weight: 'bold', textDecoration: 'none', color: 'blue' }} to="/Shop">SHOP</NavLink>!
+                    </MiniHeader>
+                  </>
                 )}
               </CartWrapper>
             )}

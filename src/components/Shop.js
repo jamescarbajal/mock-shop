@@ -11,8 +11,6 @@ export default function Shop(props) {
   const [productList, setProductList] = useState({});
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const [cartItems, setCartItems] = useState(CartContext);
   
   const getAllProducts = async () => {
       setIsLoading(true);

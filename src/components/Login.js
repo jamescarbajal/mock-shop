@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { UserContext } from '../contexts/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import LabeledTextInput from './LabeledTextInput';
 import { LoginContainer, MiniHeader, StyledButton } from './StyledComponents';
 
@@ -25,9 +25,10 @@ export default function Login() {
     const navigate = useNavigate();
 
     const handleLoginSubmit = (e) => {
+        e.preventDefault();
         if (email === testUser.email && password === testUser.password) {
-            setLoggedInUser(testUser);
-            navigate('/shop');
+            setLoggedInUser(testUser.email);
+            navigate('/Shop');
         } else {
             setShowLoginError(true);
         }
@@ -39,7 +40,7 @@ export default function Login() {
 
             <MiniHeader>Login</MiniHeader>
 
-            <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column' }}>
+            <form onSubmit={handleLoginSubmit} style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
                 <LabeledTextInput 
                     name="Email" 
                     value={email} 
@@ -57,7 +58,11 @@ export default function Login() {
 
             {showLoginError && <div style={{ marginTop: '20px', color: 'darksteelblue' }}>Invalid email or password.</div>}
 
-        </LoginContainer>
 
+            <MiniHeader style={{ position: 'absolute', top: '70%' }}>
+                or <NavLink style={{ textDecoration: 'none', color: 'darkblue' }} to="/#">Create Account</NavLink>
+            </MiniHeader>
+
+        </LoginContainer>
     );
 };
