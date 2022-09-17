@@ -79,7 +79,7 @@ export const CartCircle = styled.div`
     width: 20px;
     border: 1px solid gray;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
     color: white;
     padding: 1px;
     box-sizing: content-box;
@@ -88,8 +88,9 @@ export const CartCircle = styled.div`
 export const CartWrapper = styled.div`
     position: relative;
     display: flex;
-    flex-flow: row;
+    flex-flow: column;
     align-self: flex-start;
+    min-height: fit-content;
     height: 100%;
     width: 100%;
     margin-top: 125px;
