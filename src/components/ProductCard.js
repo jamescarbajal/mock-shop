@@ -12,6 +12,8 @@ export default function ProductCard(props) {
 
     const { cartItems, setCartItems } = useContext(CartContext);
 
+    const [isItemInCart, setIsItemInCart] = useState(false);
+
     const AddToCart = (itemId) => {
         const currentCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
         setCartItems([...currentCart, {id: itemId, quantity: 1}]);
@@ -23,25 +25,27 @@ export default function ProductCard(props) {
             if (obj.id === itemId) setCartItems({...obj, quantity: obj.quantity++});
         });
     };
-    
-    const isItemInCart = (itemId) => {
+
+    function checkCart(itemId) {
+        setIsItemInCart(false);
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
         const checkCart = cartList.map( (obj) => {
-            if (obj.id === itemId.id) {
-                return true;
-            } else return false;
+            if (obj.id === itemId) {
+                console.log(`Item ${obj.id} is in cart.`);
+                setIsItemInCart(true);
+            } else setIsItemInCart(false);
         });
-        return checkCart;
+        return;
     };
-
-    useEffect( () => {
-        isItemInCart(id);
-    }, [cartItems]);
 
     const ViewProductClick = (e) => {
         e.preventDefault();
         setIsModalOpen(true);
     };
+
+    useEffect(() => {
+        checkCart(id);
+    }, []);
     
     return(
         <>
@@ -57,10 +61,10 @@ export default function ProductCard(props) {
                         VIEW
                     </CardButton>
 
-                {isItemInCart(id) ? (
+                {isItemInCart ? (
                     <>
-                        <CardButton onClick={() => IncrementItem(id)}>
-                            ADD ANOTHER!!
+                        <CardButton style={{ border: '1px solid orange' }} onClick={() => IncrementItem(id)}>
+                            JUST ONE MORE
                         </CardButton>
                     </>
                 ):(

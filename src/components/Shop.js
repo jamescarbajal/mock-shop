@@ -34,7 +34,8 @@ export default function Shop(props) {
             {!isLoading ? (
               <CardContainer>
                 {productList.length > 0 ? (
-                  productList.map( (product) => (
+                  productList.map( (product) => 
+                  (
                     <ProductCard product={product} id={product.id} title={product.title} price={product.price} category={product.category} description={product.description} image={product.image} />
                   ))
 

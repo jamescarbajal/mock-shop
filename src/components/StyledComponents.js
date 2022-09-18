@@ -26,7 +26,7 @@ export const CardButton = styled.button`
     height: 30px;
     width: fit-content;
     padding: 4px;
-    border: 1px gray;
+    border: 1px solid lightblue;
     border-radius: 5px;
     box-shadow: 3px 5px 5px lightgray;
     background-color: rgba( 200, 200, 255, 0.2);
