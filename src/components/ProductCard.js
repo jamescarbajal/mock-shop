@@ -26,26 +26,23 @@ export default function ProductCard(props) {
         });
     };
 
-    function checkCart(itemId) {
+    const checkCart = (itemId) => {
         setIsItemInCart(false);
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-        const checkCart = cartList.map( (obj) => {
+        cartList.map( (obj) => {
             if (obj.id === itemId) {
-                console.log(`Item ${obj.id} is in cart.`);
                 setIsItemInCart(true);
-            } else setIsItemInCart(false);
-        });
-        return;
+                return;
+            };
+        })
     };
+
+    console.log('Check Cart Result: ', checkCart(id));
 
     const ViewProductClick = (e) => {
         e.preventDefault();
         setIsModalOpen(true);
     };
-
-    useEffect(() => {
-        checkCart(id);
-    }, []);
     
     return(
         <>
@@ -61,7 +58,7 @@ export default function ProductCard(props) {
                         VIEW
                     </CardButton>
 
-                {isItemInCart ? (
+                {true ? (
                     <>
                         <CardButton style={{ border: '1px solid orange' }} onClick={() => IncrementItem(id)}>
                             JUST ONE MORE
