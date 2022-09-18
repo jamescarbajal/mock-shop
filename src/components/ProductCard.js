@@ -12,25 +12,31 @@ export default function ProductCard(props) {
 
     const { cartItems, setCartItems } = useContext(CartContext);
 
-    function checkCart(currentCart, selectedId){
-        for(const e of currentCart){
-            if (e.id === selectedId){
-                console.log(e.id);
-                return e.id;
-            } else return false;
-        }
-    }
-
-    const AddToCart = (selectedId) => {
+    const AddToCart = (itemId) => {
         const currentCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
-        const check = checkCart(selectedId);
-        console.log('Check result: ', check);
-        if (!check) {
-            setCartItems([...currentCart, {id: selectedId, quantity: 1}]);
-        } else {
-            setCartItems(currentCart => [...currentCart.]);
-        }
+        setCartItems([...currentCart, {id: itemId, quantity: 1}]);
     };
+
+    const IncrementItem = (itemId) => {
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        cartList.map( (obj) => {
+            if (obj.id === itemId) setCartItems({...obj, quantity: obj.quantity++});
+        });
+    };
+    
+    const isItemInCart = (itemId) => {
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        const checkCart = cartList.map( (obj) => {
+            if (obj.id === itemId.id) {
+                return true;
+            } else return false;
+        });
+        return checkCart;
+    };
+
+    useEffect( () => {
+        isItemInCart(id);
+    }, [cartItems]);
 
     const ViewProductClick = (e) => {
         e.preventDefault();
@@ -50,10 +56,21 @@ export default function ProductCard(props) {
                     <CardButton onClick={ViewProductClick}>
                         VIEW
                     </CardButton>
-                    
-                    <CardButton onClick={() => AddToCart(id)}>
-                        ADD TO CART
-                    </CardButton>
+
+                {isItemInCart(id) ? (
+                    <>
+                        <CardButton onClick={() => IncrementItem(id)}>
+                            ADD ANOTHER!!
+                        </CardButton>
+                    </>
+                ):(
+                    <>
+                        <CardButton onClick={() => AddToCart(id)}>
+                            ADD TO CART
+                        </CardButton>
+                    </>
+                )}
+                
                 </div>
             </CardWrapper>
 

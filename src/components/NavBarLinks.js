@@ -15,8 +15,6 @@ export default function NavBarLinks() {
 
     const [ isCartOpen, setIsCartOpen ] = useState(false);
 
-    console.log('Cart Items: ', cartItems);
-
     function styleByActiveStatus(isActive) {
         return isActive ? { 
             fontWeight: "bold",
