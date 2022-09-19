@@ -66,6 +66,22 @@ export const CardWrapper = styled.div`
     margin: 10px;
 `;
 
+export const CartButton = styled.button`
+    margin-left: 5px;
+    margin-right: 5px;
+    background: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 20px;
+    height: 25px;
+    line-height: 0;
+    padding: 0;
+    padding-bottom: 4px;
+    box-shadow: 2px 2px 2px lightgray;
+    background-color: rgba( 200, 200, 255, 0.25);
+`;
+
 export const CartCircle = styled.div`
     position: absolute;
     font-size: 15px;

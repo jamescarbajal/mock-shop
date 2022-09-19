@@ -17,7 +17,7 @@ export default function NavBarLinks() {
 
     const cartQuantity = cartItems.reduce( 
         (prev, curr) => prev + curr.quantity, 0,
-    );
+    ) || [];
 
     function styleByActiveStatus(isActive) {
         return isActive ? { 
