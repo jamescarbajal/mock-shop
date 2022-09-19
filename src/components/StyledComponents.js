@@ -85,21 +85,11 @@ export const CartCircle = styled.div`
     box-sizing: content-box;
 `;
 
-export const CartHeader = styled.div`
-    display: flex;
-    font-weight: 600;
-    width: 50px;
-    text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
-`;
-
 export const CartDescription = styled.div`
     display: flex;
     width: 300px;
     text-align: left;
-    padding-left: 20px;
-    padding-right: 20px
+    padding: 20px;
 `;
 
 export const CartDetail = styled.div`
@@ -110,6 +100,15 @@ export const CartDetail = styled.div`
     margin-right: 20px
 `;
 
+export const CartHeader = styled.div`
+    display: flex;
+    font-weight: 600;
+    width: 50px;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+`;
+
 export const CartItemContainer = styled.div`
     position: relative;
     width: 100%;
@@ -118,12 +117,12 @@ export const CartItemContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     margin-top: 20px;
     margin-left: 20px;
     margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid black;
+    border: 1px solid gray;
+    border-radius: 10px;
 `;
 
 export const CartWrapper = styled.div`

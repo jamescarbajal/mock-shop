@@ -18,14 +18,14 @@ export default function Cart(props) {
     async function getItemInfo(e) {
       setIsLoading(true);
       const cartItems = (e);
-      console.log('Cart Items: ', cartItems);
       for (const item of cartItems) {
         const id = item.id;
+        const qty = item.quantity;
         const url = `https://fakestoreapi.com/products/${id}`;
         const response = await fetch(url);
         const data = await response.json();
-        console.log('Data: ', data);
-        setCurrentCartData(currentCartData => [...currentCartData, data]);
+        const fullData = {...data, quantity: qty};
+        setCurrentCartData(currentCartData => [...currentCartData, fullData]);
       }
       setIsLoading(false);
   };
@@ -39,7 +39,7 @@ export default function Cart(props) {
     return (
         <>
 
-            <MiniHeader style={{ position: 'absolute', marginTop: '100px' }}>Your Cart</MiniHeader>
+            <MiniHeader style={{ position: 'absolute', marginTop: '110px' }}>Your Cart</MiniHeader>
 
             {isLoading ? (
 
@@ -51,7 +51,7 @@ export default function Cart(props) {
 
                   currentCartData.map( (item) => (
 
-                    <CartItem id={item.id} title={item.title} description={item.description} image={item.image} category={item.category} price={item.price}/>
+                    <CartItem id={item.id} quantity={item.quantity} title={item.title} description={item.description} image={item.image} category={item.category} price={item.price}/>
                   ))
 
                 ):(

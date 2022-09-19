@@ -62,19 +62,19 @@ export default function ProductCard(props) {
                     <CardHeader>{title}</CardHeader>
                 </div>
                 <div class="d-flex flex-row justify-content-between w-100 mt-3">
-                    <CardButton onClick={ViewProductClick}>
+                    <CardButton style={{ border: '2px solid lightblue' }} onClick={ViewProductClick}>
                         VIEW
                     </CardButton>
 
                 {isItemInCart ? (
                     <>
-                        <CardButton style={{ border: '1px solid orange' }} onClick={() => IncrementItem(id)}>
+                        <CardButton style={{ border: '2px solid orange' }} onClick={() => IncrementItem(id)}>
                             JUST ONE MORE
                         </CardButton>
                     </>
                 ):(
                     <>
-                        <CardButton onClick={() => AddToCart(id)}>
+                        <CardButton style={{ border: '2px solid lightblue' }} onClick={() => AddToCart(id)}>
                             ADD TO CART
                         </CardButton>
                     </>
