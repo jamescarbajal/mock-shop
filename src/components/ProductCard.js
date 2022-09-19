@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from 'react';
 import { CartContext } from '../contexts/Cart/CartContext';
 import LazyLoad from 'react-lazy-load';
 import ProductModal from './ProductModal';
+import { render } from "@testing-library/react";
 
 export default function ProductCard(props) {
 
@@ -14,30 +15,37 @@ export default function ProductCard(props) {
 
     const [isItemInCart, setIsItemInCart] = useState(false);
 
+    const checkCart = (itemId) => {
+        setIsItemInCart(false);
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        const found = cartList.find(obj => obj.id === itemId );
+        if (found){
+            setIsItemInCart(true);
+        } else setIsItemInCart(false);
+    };
+
+    useEffect( () => {
+        checkCart(id);
+    }, []);
+
     const AddToCart = (itemId) => {
-        const currentCart = JSON.parse(localStorage.getItem('CART_ITEMS'));
-        setCartItems([...currentCart, {id: itemId, quantity: 1}]);
+        const addedItem = {id: itemId, quantity: 1};
+        setCartItems([...cartItems, addedItem]);
+        setIsItemInCart(true);
     };
 
     const IncrementItem = (itemId) => {
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-        cartList.map( (obj) => {
-            if (obj.id === itemId) setCartItems({...obj, quantity: obj.quantity++});
-        });
-    };
-
-    const checkCart = (itemId) => {
-        setIsItemInCart(false);
-        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-        cartList.map( (obj) => {
+        const found = cartList.find( (obj, ind) => {
             if (obj.id === itemId) {
-                setIsItemInCart(true);
-                return;
-            };
-        })
+                cartList[ind] = {id: itemId, quantity: obj.quantity+1};
+                const updatedList = cartList;
+                setCartItems(updatedList);
+                return true;
+            } else return false;
+        });
+        checkCart(itemId);
     };
-
-    console.log('Check Cart Result: ', checkCart(id));
 
     const ViewProductClick = (e) => {
         e.preventDefault();
@@ -58,7 +66,7 @@ export default function ProductCard(props) {
                         VIEW
                     </CardButton>
 
-                {true ? (
+                {isItemInCart ? (
                     <>
                         <CardButton style={{ border: '1px solid orange' }} onClick={() => IncrementItem(id)}>
                             JUST ONE MORE
