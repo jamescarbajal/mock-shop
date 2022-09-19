@@ -15,6 +15,10 @@ export default function NavBarLinks() {
 
     const [ isCartOpen, setIsCartOpen ] = useState(false);
 
+    const cartQuantity = cartItems.reduce( 
+        (prev, curr) => prev + curr.quantity, 0,
+    );
+
     function styleByActiveStatus(isActive) {
         return isActive ? { 
             fontWeight: "bold",
@@ -61,8 +65,8 @@ export default function NavBarLinks() {
                         <NavLink to="/Cart">
                             <StyledLink path="/Cart" style={ ({isActive}) => styleByActiveStatus(isActive)}>
                                 <FontAwesomeIcon icon={faCartShopping} />
-                                {cartItems.length > 0 && (
-                                    <CartCircle>{cartItems.length}</CartCircle>
+                                {cartQuantity > 0 && (
+                                    <CartCircle>{cartQuantity}</CartCircle>
                                 )}
                             </StyledLink>
                         </NavLink>
