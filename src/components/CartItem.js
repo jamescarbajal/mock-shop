@@ -1,10 +1,9 @@
-import { ProductImage, CartHeader, CartItemContainer, CartButton } from "./StyledComponents";
+import { ProductImage, CartHeader, CartItemContainer, CartButton, CartImage } from "./StyledComponents";
 import { useState, useContext } from "react";
 import TruncateMarkup from "react-truncate-markup";
 import ProductModal from "./ProductModal";
 import { CartContext } from "../contexts/Cart/CartContext";
 import { useEffect } from "react";
-import { getSuggestedQuery } from "@testing-library/react";
 
 export default function CartItem(props) {
 
@@ -77,35 +76,41 @@ export default function CartItem(props) {
     return(
     <>
             <CartItemContainer>
-            <div class="row border border-solid rounded w-100 p-2">
-                <div class="col-12 col-md-6 d-flex flex-column align-items-center" onClick={ViewProductClick} style={{ cursor: 'pointer', boxShadow: '3px 3px 2px lightgray' }}>
-                    <ProductImage style={{ margin: '10px', padding: '5px' }} src={image} alt={title}></ProductImage>
-                    <CartHeader style={{ fontSize: '18px', maxWidth: '400px'}}>{title}</CartHeader>
-                    <TruncateMarkup lines={3}>
-                        <div style={{ maxWidth: '400px', marginBottom: '30px' }}>{description}</div>
-                    </TruncateMarkup>
+                <div class="col-12 col-md-3 d-flex justify-content-center">
+                <CartImage src={image} alt={title}></CartImage>
                 </div>
-                <div class="row col-12 col-md-6">
-                    <div class="col-12 col-md-6" style={{ minHeight:'200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+
+                <div class="col-12 col-md-4 d-flex flex-column">
+                    <CartHeader style={{ fontSize: '18px', width: '90%', maxWidth: '350px'}}>
+                        {title}
+                    </CartHeader>
+                    <div class="mx-auto px-5" style={{ maxWidth: '500px' }}>
+                        <TruncateMarkup lines={3} >
+                            <div>{description}</div>
+                        </TruncateMarkup>
+                    </div>
+                </div>
+                
+
+                <div class="col-12 col-md-5">
+                    <div class="row">
+                        <div class="col d-flex flex-column justify-items-center align-items-center">
                         <CartHeader>Price: ${price.toFixed(2)}</CartHeader>
-                        <CartHeader>
-                            Qty: 
-                            <CartButton onClick={() => DecrementItem(id)}>-</CartButton>
-                            {quantity}
-                            <CartButton onClick={() => IncrementItem(id)}>+</CartButton>
-                        </CartHeader>
+                            <CartHeader>
+                                Qty: 
+                                <CartButton onClick={() => DecrementItem(id)}>-</CartButton>
+                                    {quantity}
+                                <CartButton onClick={() => IncrementItem(id)}>+</CartButton>
+                            </CartHeader>
+                        </div>
+                        <div class="col d-flex flex-column justify-contents-center align-items-center">
                         <CartHeader>Subtotal: ${itemTotal}</CartHeader>
-                    </div>
-                    <div class="col-12 col-md-6" style={{ minHeight:'200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
-                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer' }}>Remove from cart </CartHeader>
+                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
+                        </div>
                     </div>
                 </div>
-            </div>
-
             </CartItemContainer>
-        <div class="">
 
-        </div>
 
         <ProductModal category={category} description={description} id={id} image={image} price={price} title={title} isModalOpen={isModalOpen} quantity={quantity} setIsModalOpen={setIsModalOpen} />
     </>
