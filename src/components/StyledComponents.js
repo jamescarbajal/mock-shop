@@ -101,12 +101,12 @@ export const CartDetail = styled.div`
 `;
 
 export const CartHeader = styled.div`
+    position: relative;
     display: flex;
     font-weight: 600;
-    width: 50px;
-    text-align: left;
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 100px;
+    text-align: center;
+    padding: 0;
 `;
 
 export const CartItemContainer = styled.div`
