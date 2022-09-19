@@ -34,8 +34,6 @@ export default function Cart(props) {
     getItemInfo(cartItems);
   }, []);
 
-  console.log('Finished data: ', currentCartData);
-
     return (
         <>
 

@@ -3,6 +3,8 @@ import { useState, useContext } from "react";
 import TruncateMarkup from "react-truncate-markup";
 import ProductModal from "./ProductModal";
 import { CartContext } from "../contexts/Cart/CartContext";
+import { useEffect } from "react";
+import { getSuggestedQuery } from "@testing-library/react";
 
 export default function CartItem(props) {
 
@@ -12,46 +14,65 @@ export default function CartItem(props) {
 
     const [ isModalLoading, setIsModalLoading ] = useState(false);
 
+    const [ currentQty, setCurrentQty ] = useState(0);
+
     const { id, title, description, category, price, image, quantity } = props;
 
     const itemTotal = (price * quantity).toFixed(2);
 
-    // const IncrementItem = (itemId) => {
-    //     const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-    //     const found = cartList.find( (obj, ind) => {
-    //         if (obj.id === itemId) {
-    //             cartList[ind] = {id: itemId, quantity: obj.quantity+1};
-    //             const updatedList = cartList;
-    //             setCartItems(updatedList);
-    //             return true;
-    //         } else return false;
-    //     });
-    // };
+    const IncrementItem = (itemId) => {
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        const found = cartList.find( (obj, ind) => {
+            if (obj.id === itemId) {
+                cartList[ind] = {id: itemId, quantity: obj.quantity+1};
+                const updatedList = cartList;
+                setCartItems(updatedList);
+                return true;
+            } else return false;
+        });
+    };
 
-    // const RemoveItemPrompt = (itemId) => {
+    const RemoveItem = (itemId) => {
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        console.log('Cartlist before splice: ', cartList);
+        const found = cartList.find( (obj, ind) => {
+            if (obj.id === itemId) {
+                console.log('Index: ', ind);
+                cartList.splice(ind, 1);
+                console.log('Cartlist after splice: ', cartList);
+                const updatedList = cartList;
+                console.log('Updated Cart List: ', updatedList);
+                setCartItems(updatedList);
+                window.location.reload();
+                return true;
+            };
+        });
+    };
 
-    // };
-
-    // const DecrementItem = (itemId) => {
-    //     const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-    //     const found = cartList.find( (obj, ind) => {
-    //         if (obj.id === itemId) {
-    //             if (obj.quantity === 1){
-    //                 const confirmDelete = RemoveItemPrompt(itemId);
-    //             } else {
-    //                 cartList[ind] = {id: itemId, quantity: obj.quantity-1}
-    //                 const updatedList = cartList;
-    //                 setCartItems(updatedList);
-    //                 return true;
-    //             }
-    //         } else return false;
-    //     })
-    // };
+    const DecrementItem = (itemId) => {
+        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
+        const found = cartList.find( (obj, ind) => {
+            if (obj.id === itemId) {
+                if (obj.quantity === 1){
+                    RemoveItem(itemId);
+                } else {
+                    cartList[ind] = {id: itemId, quantity: obj.quantity-1}
+                    const updatedList = cartList;
+                    setCartItems(updatedList);
+                    return true;
+                }
+            } else return false;
+        })
+    };
 
     const ViewProductClick = (e) => {
         e.preventDefault();
         setIsModalOpen(true);
     };
+
+    useEffect( () => {
+       
+    }, [cartItems]);
 
     return(
     <>
@@ -66,17 +87,17 @@ export default function CartItem(props) {
                 </div>
                 <div class="row col-12 col-md-6">
                     <div class="col-12 col-md-6" style={{ minHeight:'200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
-                        <CartHeader>Price: ${price}</CartHeader>
+                        <CartHeader>Price: ${price.toFixed(2)}</CartHeader>
                         <CartHeader>
                             Qty: 
-                            <CartButton>-</CartButton>
+                            <CartButton onClick={() => DecrementItem(id)}>-</CartButton>
                             {quantity}
-                            <CartButton>+</CartButton>
+                            <CartButton onClick={() => IncrementItem(id)}>+</CartButton>
                         </CartHeader>
                         <CartHeader>Subtotal: ${itemTotal}</CartHeader>
                     </div>
                     <div class="col-12 col-md-6" style={{ minHeight:'200px', display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
-                        <CartHeader></CartHeader>
+                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer' }}>Remove from cart </CartHeader>
                     </div>
                 </div>
             </div>

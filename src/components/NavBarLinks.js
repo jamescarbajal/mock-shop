@@ -15,9 +15,12 @@ export default function NavBarLinks() {
 
     const [ isCartOpen, setIsCartOpen ] = useState(false);
 
-    const cartQuantity = cartItems.reduce( 
-        (prev, curr) => prev + curr.quantity, 0,
-    ) || [];
+    const cartQuantity = (cartItems) => {
+        if (cartItems.length > 0) {
+        const cartReduce = cartItems.reduce( (prev, curr) => prev + curr.quantity, 0,);
+        return cartReduce;
+        } else return 0;
+    };
 
     function styleByActiveStatus(isActive) {
         return isActive ? { 
@@ -32,6 +35,10 @@ export default function NavBarLinks() {
                 border: 'none'
             };
     };
+
+    useEffect( () => {
+        cartQuantity(cartItems);
+    }, []);
 
     return (
         <>
@@ -65,8 +72,8 @@ export default function NavBarLinks() {
                         <NavLink to="/Cart">
                             <StyledLink path="/Cart" style={ ({isActive}) => styleByActiveStatus(isActive)}>
                                 <FontAwesomeIcon icon={faCartShopping} />
-                                {cartQuantity > 0 && (
-                                    <CartCircle>{cartQuantity}</CartCircle>
+                                {cartQuantity(cartItems) > 0 && (
+                                    <CartCircle>{cartQuantity(cartItems)}</CartCircle>
                                 )}
                             </StyledLink>
                         </NavLink>
