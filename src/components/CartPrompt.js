@@ -3,10 +3,14 @@ import { CartPromptWrapper, ModalCloseButton, ModalImage, ModalWrapperContents, 
 import TruncateMarkup from 'react-truncate-markup';
 import { useContext } from 'react';
 import { CartContext } from '../contexts/Cart/CartContext';
+import { useEffect } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function CartPrompt(props) {
 
-    const { setCartItems } = useContext(CartContext);
+    const navigate = useNavigate();
+
+    const { cartItems, setCartItems } = useContext(CartContext);
 
     const { id, isPromptOpen, setIsPromptOpen, description, image } = props;
 
@@ -21,9 +25,8 @@ export default function CartPrompt(props) {
                 const updatedList = cartList;
                 console.log('Updated Cart List: ', updatedList);
                 setCartItems(updatedList);
-                handleClosePrompt();
+                setIsPromptOpen(false);
                 window.location.reload();
-                return true;
             };
         });
     };
@@ -52,7 +55,7 @@ export default function CartPrompt(props) {
                         <StyledButton onClick={handleClosePrompt} style={{ marginLeft: '10px', marginRight: '10px' }}>
                             Cancel
                         </StyledButton>
-                        <StyledButton conClick={() => RemoveItem(id)} style={{ marginLeft: '10px', marginRight: '10px', color: 'darkred' }}>
+                        <StyledButton onClick={() => RemoveItem(id)} style={{ marginLeft: '10px', marginRight: '10px', color: 'darkred' }}>
                             Remove
                         </StyledButton>
                     </div>
