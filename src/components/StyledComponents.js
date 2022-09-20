@@ -155,6 +155,16 @@ export const CartItemContainer = styled.div`
     border-radius: 7px;
 `;
 
+export const CartPromptWrapper = styled.div`
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+    width: 100%;
+`;
+
 export const CartWrapper = styled.div`
     position: relative;
     display: flex;

@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import TruncateMarkup from "react-truncate-markup";
 import ProductModal from "./ProductModal";
 import { CartContext } from "../contexts/Cart/CartContext";
-import PromptModal from "./CartPrompt";
+import CartPrompt from "./CartPrompt";
 
 export default function CartItem(props) {
 
@@ -12,8 +12,6 @@ export default function CartItem(props) {
     const [ isModalOpen, setIsModalOpen ] = useState(false);
 
     const [ isPromptOpen, setIsPromptOpen ] = useState(false);
-
-    const [ isModalLoading, setIsModalLoading ] = useState(false);
 
     const { id, title, description, category, price, image, quantity } = props;
 
@@ -56,7 +54,7 @@ export default function CartItem(props) {
         const found = cartList.find( (obj, ind) => {
             if (obj.id === itemId) {
                 if (obj.quantity === 1){
-                    RemoveItem(itemId);
+                    setIsPromptOpen(true);
                 } else {
                     cartList[ind] = {id: itemId, quantity: obj.quantity-1}
                     setCurrentQty(cartList[ind].quantity);
@@ -108,8 +106,8 @@ export default function CartItem(props) {
                             </CartHeader>
                         </div>
                         <div class="col d-flex flex-column justify-contents-center align-items-center">
-                        <CartHeader style={{ color: 'slategray' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
-                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
+                        <CartHeader style={{ color: 'darkgreen' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
+                        <CartHeader onClick={() => setIsPromptOpen(true)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
                         </div>
                     </div>
                 </div>
@@ -117,6 +115,8 @@ export default function CartItem(props) {
 
 
         <ProductModal category={category} description={description} id={id} image={image} price={price} title={title} quantity={quantity} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  />
+
+        <CartPrompt id={id} image={image} description={description} isPromptOpen={isPromptOpen} setIsPromptOpen={setIsPromptOpen} />
     </div>
     );
 };
