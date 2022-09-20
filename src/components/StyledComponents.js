@@ -123,11 +123,12 @@ export const CartHeader = styled.div`
     position: relative;
     display: flex;
     font-weight: 600;
-    width: fit-content;
-    text-align: center;
+    font-size: 16px;
+    max-width: 300px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 `;
 
 export const CartImage = styled.img`
@@ -149,6 +150,8 @@ export const CartItemContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     margin-bottom: 30px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
 `;
 
 export const CartWrapper = styled.div`

@@ -13,17 +13,18 @@ export default function CartItem(props) {
 
     const [ isModalLoading, setIsModalLoading ] = useState(false);
 
-    const [ currentQty, setCurrentQty ] = useState(0);
-
     const { id, title, description, category, price, image, quantity } = props;
 
-    const itemTotal = (price * quantity).toFixed(2);
+    const [ currentQty, setCurrentQty ] = useState(quantity);
+
+    const [ itemSubtotal, setItemSubtotal ] = useState(price * currentQty);
 
     const IncrementItem = (itemId) => {
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
         const found = cartList.find( (obj, ind) => {
             if (obj.id === itemId) {
                 cartList[ind] = {id: itemId, quantity: obj.quantity+1};
+                setCurrentQty(cartList[ind].quantity);
                 const updatedList = cartList;
                 setCartItems(updatedList);
                 return true;
@@ -56,6 +57,7 @@ export default function CartItem(props) {
                     RemoveItem(itemId);
                 } else {
                     cartList[ind] = {id: itemId, quantity: obj.quantity-1}
+                    setCurrentQty(cartList[ind].quantity);
                     const updatedList = cartList;
                     setCartItems(updatedList);
                     return true;
@@ -70,18 +72,18 @@ export default function CartItem(props) {
     };
 
     useEffect( () => {
-       
+        setItemSubtotal(price * currentQty);
     }, [cartItems]);
 
     return(
-    <>
+    <div class="mx-auto" style={{ width: '90%', padding: '5px' }}>
             <CartItemContainer>
-                <div class="col-12 col-md-3 d-flex justify-content-center">
+                <div class="col-12 col-md-3 d-flex justify-content-center" onClick={ViewProductClick} style={{ cursor: 'pointer' }}>
                 <CartImage src={image} alt={title}></CartImage>
                 </div>
 
                 <div class="col-12 col-md-4 d-flex flex-column">
-                    <CartHeader style={{ fontSize: '18px', width: '90%', maxWidth: '350px'}}>
+                    <CartHeader>
                         {title}
                     </CartHeader>
                     <div class="mx-auto px-5" style={{ maxWidth: '500px' }}>
@@ -93,19 +95,19 @@ export default function CartItem(props) {
                 
 
                 <div class="col-12 col-md-5">
-                    <div class="row">
+                    <div class="row mx-5">
                         <div class="col d-flex flex-column justify-items-center align-items-center">
                         <CartHeader>Price: ${price.toFixed(2)}</CartHeader>
                             <CartHeader>
                                 Qty: 
                                 <CartButton onClick={() => DecrementItem(id)}>-</CartButton>
-                                    {quantity}
+                                    {currentQty}
                                 <CartButton onClick={() => IncrementItem(id)}>+</CartButton>
                             </CartHeader>
                         </div>
                         <div class="col d-flex flex-column justify-contents-center align-items-center">
-                        <CartHeader>Subtotal: ${itemTotal}</CartHeader>
-                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
+                        <CartHeader>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
+                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px', marginTop: '-10px' }}>Remove </CartHeader>
                         </div>
                     </div>
                 </div>
@@ -113,6 +115,6 @@ export default function CartItem(props) {
 
 
         <ProductModal category={category} description={description} id={id} image={image} price={price} title={title} isModalOpen={isModalOpen} quantity={quantity} setIsModalOpen={setIsModalOpen} />
-    </>
+    </div>
     );
 };
