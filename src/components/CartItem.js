@@ -87,7 +87,7 @@ export default function CartItem(props) {
                         {title}
                     </CartHeader>
                     <div class="mx-auto px-5" style={{ maxWidth: '500px' }}>
-                        <TruncateMarkup lines={3} >
+                        <TruncateMarkup lines={2} >
                             <div>{description}</div>
                         </TruncateMarkup>
                     </div>
