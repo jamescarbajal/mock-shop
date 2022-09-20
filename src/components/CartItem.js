@@ -21,8 +21,6 @@ export default function CartItem(props) {
 
     const [ itemSubtotal, setItemSubtotal ] = useState(price * currentQty);
 
-    const [ confirmRemove, setConfirmRemove ] = useState(false);
-
     const IncrementItem = (itemId) => {
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
         const found = cartList.find( (obj, ind) => {
@@ -86,7 +84,7 @@ export default function CartItem(props) {
                 <CartImage src={image} alt={title}></CartImage>
                 </div>
 
-                <div class="col-12 col-md-4 d-flex flex-column">
+                <div class="col-12 col-md-4 d-flex flex-column" onClick={ViewProductClick} style={{ cursor: 'pointer' }}>
                     <CartHeader>
                         {title}
                     </CartHeader>
@@ -110,7 +108,7 @@ export default function CartItem(props) {
                             </CartHeader>
                         </div>
                         <div class="col d-flex flex-column justify-contents-center align-items-center">
-                        <CartHeader style={{ color: 'darkslategreen' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
+                        <CartHeader style={{ color: 'slategray' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
                         <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
                         </div>
                     </div>
@@ -118,7 +116,7 @@ export default function CartItem(props) {
             </CartItemContainer>
 
 
-        <PromptModal category={category} description={description} id={id} image={image} price={price} title={title} isModalOpen={isModalOpen} quantity={quantity} isPromptOpen={isPromptOpen} setIsPromptOpen={setIsPromptOpen} setConfirmRemove={setConfirmRemove} />
+        <ProductModal category={category} description={description} id={id} image={image} price={price} title={title} quantity={quantity} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}  />
     </div>
     );
 };
