@@ -5,7 +5,7 @@ const UserContext = createContext(null);
 const UserProvider = (props) => {
 
     const localLogCheck = () => {
-        const checkLocal = JSON.parse(localStorage.getItem('USER_AUTH'));
+        const checkLocal = JSON.parse(localStorage.getItem('USER_AUTH')) || "";
         if (checkLocal) {
             return checkLocal;
         } else {

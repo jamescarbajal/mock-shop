@@ -63,8 +63,8 @@ export default function NavBarLinks() {
                     ) 
                     : 
                     (
-                        <NavLink to="/Account" >
-                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/Account" class="mx-2">
+                        <NavLink to="/UserAccount" >
+                            <StyledLink style={({isActive}) => styleByActiveStatus(isActive)} path="/UserAccount" class="mx-2">
                                 <FontAwesomeIcon icon={faUser} style={{ color: 'black', border: '1px solid black', borderRadius: '50%', padding: '5px', backgroundColor: 'lightsteelblue' }} />
                             </StyledLink>
                         </NavLink>

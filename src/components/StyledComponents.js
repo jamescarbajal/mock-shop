@@ -124,7 +124,7 @@ export const CartHeader = styled.div`
     display: flex;
     font-weight: 600;
     font-size: 16px;
-    max-width: 300px;
+    max-width: 350px;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -136,6 +136,7 @@ export const CartImage = styled.img`
     width: fit-content;
     max-width: 150px;
     height: auto;
+    padding: 5px;
 `;
 
 export const CartItemContainer = styled.div`

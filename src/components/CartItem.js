@@ -1,15 +1,17 @@
 import { ProductImage, CartHeader, CartItemContainer, CartButton, CartImage } from "./StyledComponents";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import TruncateMarkup from "react-truncate-markup";
 import ProductModal from "./ProductModal";
 import { CartContext } from "../contexts/Cart/CartContext";
-import { useEffect } from "react";
+import PromptModal from "./CartPrompt";
 
 export default function CartItem(props) {
 
-    const { cartItems, setCartItems } = useContext(CartContext)
+    const { cartItems, setCartItems } = useContext(CartContext);
 
     const [ isModalOpen, setIsModalOpen ] = useState(false);
+
+    const [ isPromptOpen, setIsPromptOpen ] = useState(false);
 
     const [ isModalLoading, setIsModalLoading ] = useState(false);
 
@@ -18,6 +20,8 @@ export default function CartItem(props) {
     const [ currentQty, setCurrentQty ] = useState(quantity);
 
     const [ itemSubtotal, setItemSubtotal ] = useState(price * currentQty);
+
+    const [ confirmRemove, setConfirmRemove ] = useState(false);
 
     const IncrementItem = (itemId) => {
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
@@ -106,15 +110,15 @@ export default function CartItem(props) {
                             </CartHeader>
                         </div>
                         <div class="col d-flex flex-column justify-contents-center align-items-center">
-                        <CartHeader>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
-                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px', marginTop: '-10px' }}>Remove </CartHeader>
+                        <CartHeader style={{ color: 'darkslategreen' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
+                        <CartHeader onClick={() => RemoveItem(id)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
                         </div>
                     </div>
                 </div>
             </CartItemContainer>
 
 
-        <ProductModal category={category} description={description} id={id} image={image} price={price} title={title} isModalOpen={isModalOpen} quantity={quantity} setIsModalOpen={setIsModalOpen} />
+        <PromptModal category={category} description={description} id={id} image={image} price={price} title={title} isModalOpen={isModalOpen} quantity={quantity} isPromptOpen={isPromptOpen} setIsPromptOpen={setIsPromptOpen} setConfirmRemove={setConfirmRemove} />
     </div>
     );
 };
