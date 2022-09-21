@@ -95,8 +95,8 @@ export default function CartItem(props) {
                 
 
                 <div class="col-12 col-md-5">
-                    <div class="row mx-5">
-                        <div class="col d-flex flex-column justify-items-center align-items-center">
+                    <div class="row mx-5 h-100">
+                        <div class="col d-flex flex-column justify-items-around align-items-center">
                         <CartHeader>Price: ${price.toFixed(2)}</CartHeader>
                             <CartHeader>
                                 Qty: 
@@ -105,9 +105,13 @@ export default function CartItem(props) {
                                 <CartButton onClick={() => IncrementItem(id)}>+</CartButton>
                             </CartHeader>
                         </div>
-                        <div class="col d-flex flex-column justify-contents-center align-items-center">
-                        <CartHeader style={{ color: 'darkgreen' }}>Subtotal: ${itemSubtotal.toFixed(2)}</CartHeader>
-                        <CartHeader onClick={() => setIsPromptOpen(true)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>Remove </CartHeader>
+                        <div class="col d-flex flex-column justify-contents-around align-items-center">
+                            <CartHeader style={{ paddingBottom: '0px', marginBottom: '0px', color: 'darkgreen' }}>
+                                Subtotal: ${itemSubtotal.toFixed(2)}
+                            </CartHeader>
+                            <CartHeader onClick={() => setIsPromptOpen(true)} style={{ color: 'darkred', cursor: 'pointer', fontSize: '12px' }}>
+                                Remove
+                            </CartHeader>
                         </div>
                     </div>
                 </div>
