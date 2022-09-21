@@ -76,7 +76,7 @@ export default function CartItem(props) {
     }, [cartItems]);
 
     return(
-    <div class="mx-auto" style={{ width: '90%', padding: '5px' }}>
+        <div class="mx-auto" style={{ width: '90%', padding: '5px' }}>
             <CartItemContainer>
                 <div class="col-12 col-md-3 d-flex justify-content-center" onClick={ViewProductClick} style={{ cursor: 'pointer' }}>
                 <CartImage src={image} alt={title}></CartImage>
@@ -93,7 +93,6 @@ export default function CartItem(props) {
                     </div>
                 </div>
                 
-
                 <div class="col-12 col-md-5">
                     <div class="row mx-5 h-100">
                         <div class="col d-flex flex-column justify-items-around align-items-center">

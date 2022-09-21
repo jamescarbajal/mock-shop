@@ -21,7 +21,10 @@ export default function UserAccount(props) {
 
         <>
             <div>Your Account</div>
-            <div>{User}</div>    
+            <div>Name: </div>
+            <div>Email: {User}</div>
+            <div>Shipping Address: </div>
+            
             <StyledButton onClick={HandleLogout}>Logout</StyledButton>
         </>
 
