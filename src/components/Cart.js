@@ -1,4 +1,4 @@
-import { CardHeader, CardWrapper, CartWrapper, MiniHeader, StyledLink } from './StyledComponents';
+import { CardHeader, CardWrapper, CartWrapper, ColumnContainer, MiniHeader, StyledLink } from './StyledComponents';
 import Link, { NavLink } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { useEffect } from 'react';
@@ -64,7 +64,7 @@ export default function Cart(props) {
                 )}
               </CartWrapper>
             )}
-
+            <ColumnContainer>Subtotal</ColumnContainer>
         </>
     );
 };
