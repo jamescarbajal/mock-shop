@@ -3,14 +3,10 @@ import { CartPromptWrapper, ModalCloseButton, ModalImage, ModalWrapperContents, 
 import TruncateMarkup from 'react-truncate-markup';
 import { useContext } from 'react';
 import { CartContext } from '../contexts/Cart/CartContext';
-import { useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function CartPrompt(props) {
 
-    const navigate = useNavigate();
-
-    const { cartItems, setCartItems } = useContext(CartContext);
+    const { setCartItems } = useContext(CartContext);
 
     const { id, isPromptOpen, setIsPromptOpen, description, image } = props;
 

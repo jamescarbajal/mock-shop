@@ -2,6 +2,32 @@ import styled from "styled-components";
 import HomeHeroImage from '../hero-facebook.jpg';
 
 
+export const AccountButton = styled.button`
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba( 75, 75, 75, 1);
+    height: 30px;
+    width: 200px;
+    padding: 4px;
+    margin: auto;
+    margin-bottom: 30px;
+    border: 1px gray;
+    border-radius: 5px;
+    box-shadow: 3px 5px 5px gray;
+    background-color: rgba( 200, 200, 255, 0.5);
+`;
+
+export const AccountCard = styled.div`
+    min-width: 400px;
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px gray;
+`;
+
 export const AnnouncementsContainer = styled.div`
     position: absolute;
     width: 100%;
@@ -176,6 +202,18 @@ export const CartWrapper = styled.div`
     margin-top: 125px;
 `;
 
+export const ColumnContainer = styled.div`
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 130px;
+`;
+
 export const CompanyLogo = styled.h1`
     position: absolute;
     display: flex;
@@ -190,6 +228,15 @@ export const CompanyLogo = styled.h1`
     height: 100%;
     max-width: 650px;
     padding-bottom: 10px;
+`;
+
+export const FloatingHeader = styled.h2`
+    position: absolute;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-top: 110px;
+    margin-bottom: 10px;
+    text-align: center;
 `;
 
 export const FooterContainer = styled.footer`

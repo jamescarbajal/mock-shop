@@ -32,23 +32,6 @@ export default function CartItem(props) {
         });
     };
 
-    const RemoveItem = (itemId) => {
-        const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
-        console.log('Cartlist before splice: ', cartList);
-        const found = cartList.find( (obj, ind) => {
-            if (obj.id === itemId) {
-                console.log('Index: ', ind);
-                cartList.splice(ind, 1);
-                console.log('Cartlist after splice: ', cartList);
-                const updatedList = cartList;
-                console.log('Updated Cart List: ', updatedList);
-                setCartItems(updatedList);
-                window.location.reload();
-                return true;
-            };
-        });
-    };
-
     const DecrementItem = (itemId) => {
         const cartList = JSON.parse(localStorage.getItem('CART_ITEMS')) || [];
         const found = cartList.find( (obj, ind) => {
