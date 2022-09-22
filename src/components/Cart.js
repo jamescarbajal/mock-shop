@@ -36,7 +36,7 @@ export default function Cart(props) {
 
     return (
         <>
-
+            <div style={{ height: '130px' }}></div>
             <MiniHeader style={{ position: 'absolute', marginTop: '110px' }}>Your Cart</MiniHeader>
 
             {isLoading ? (

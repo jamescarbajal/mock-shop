@@ -29,7 +29,7 @@ export default function Shop(props) {
   return(
       <>
           <SearchForm />
-
+          <div></div>
           <div>
             {!isLoading ? (
               <CardContainer>

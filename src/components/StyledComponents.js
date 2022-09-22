@@ -10,17 +10,21 @@ export const AccountButton = styled.button`
     width: 200px;
     padding: 4px;
     margin: auto;
+    margin-top: 30px;
     margin-bottom: 30px;
     border: 1px gray;
     border-radius: 5px;
     box-shadow: 3px 5px 5px gray;
-    background-color: rgba( 200, 200, 255, 0.5);
+    background-color: rgba( 180, 180, 255, 0.25);
 `;
 
 export const AccountCard = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     min-width: 400px;
-    width: fit-content;
-    height: fit-content;
+    width: 100%;
+    max-width: 45vw;
     padding: 10px;
     margin: 10px;
     border: 1px solid lightgrey;
@@ -37,6 +41,12 @@ export const AnnouncementsContainer = styled.div`
     border-radius: 5px;
     padding: 3px;
     margin: 0;
+`;
+
+export const AccountLink = styled.a`
+    text-decoration: none;
+    float: right;
+    font-size: 14px;
 `;
 
 export const Banner = styled.div`
@@ -199,7 +209,6 @@ export const CartWrapper = styled.div`
     min-height: fit-content;
     height: 100%;
     width: 100%;
-    margin-top: 125px;
 `;
 
 export const ColumnContainer = styled.div`
@@ -211,7 +220,6 @@ export const ColumnContainer = styled.div`
     align-items: center;
     height: 100%;
     width: 100%;
-    margin-top: 130px;
 `;
 
 export const CompanyLogo = styled.h1`
