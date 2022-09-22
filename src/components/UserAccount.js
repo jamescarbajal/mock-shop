@@ -20,8 +20,8 @@ export default function UserAccount(props) {
     return(
 
         <>
-            <div style={{ height: '80px' }}></div>
-            <h3 class="text-muted"><hr></hr>YOUR ACCOUNT<hr></hr></h3>
+            <div style={{ height: '70px' }}></div>
+            <h3 class="my-3 text-muted">YOUR ACCOUNT</h3>
             <ColumnContainer>
                 <div class="container-fluid row d-flex flex-row justify-content-evenly align-items-evenly">
                     <AccountCard class="col-12 col-md-6">
@@ -39,7 +39,7 @@ export default function UserAccount(props) {
                         <div>Billing Address: </div>
                     </AccountCard>
                 </div>
-                <h3 class="my-2 text-muted"><hr></hr>ORDER HISTORY<hr></hr></h3>
+                <h3 class="my-4 text-muted">ORDER HISTORY</h3>
                 <div class="container-fluid row d-flex flex-row justify-content-evenly align-items-evenly">
                     <AccountCard class="col-12 col-md-6">
                         <h3 class=" my-2 text-center">Current Order</h3>
